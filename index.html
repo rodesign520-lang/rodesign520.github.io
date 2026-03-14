@@ -187,15 +187,8 @@
   }
   .doc-card-btn.free-btn { background: rgba(15,123,140,0.08); color: var(--teal); border: 1.5px solid rgba(15,123,140,0.25); }
   .doc-card-btn.free-btn:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
-  .doc-card-btn.paid-btn { background: rgba(200,64,26,0.1); color: var(--paid-badge); }
+  .doc-card-btn.paid-btn { background: rgba(200,64,26,0.1); color: var(--paid-badge); border: 1.5px solid rgba(200,64,26,0.2); }
   .doc-card-btn.paid-btn:hover { background: var(--paid-badge); color: #fff; }
-  .locked-overlay {
-    position: absolute; inset: 0; border-radius: var(--radius);
-    background: rgba(247,249,251,0.75); backdrop-filter: blur(2px);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-    opacity: 0; transition: opacity 0.2s;
-  }
-  .doc-card:hover .locked-overlay.show { opacity: 1; }
 
   /* ── SOFTWARE LIBRARY ── */
   .software-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
@@ -220,9 +213,7 @@
   .sw-link:hover { color: var(--gold); }
 
   /* ── ABOUT BAND ── */
-  .about-band {
-    background: var(--gray-100); padding: 64px 40px;
-  }
+  .about-band { background: var(--gray-100); padding: 64px 40px; }
   .about-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
   .about-img-placeholder {
     background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
@@ -253,8 +244,7 @@
   .form-textarea { resize: vertical; min-height: 120px; }
   .form-submit {
     background: var(--teal); color: #fff; font-size: 0.92rem; font-weight: 600;
-    padding: 13px; border-radius: 8px; border: none; cursor: pointer;
-    transition: background 0.2s;
+    padding: 13px; border-radius: 8px; border: none; cursor: pointer; transition: background 0.2s;
   }
   .form-submit:hover { background: var(--teal-light); }
 
@@ -301,8 +291,7 @@
   .admin-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .admin-submit {
     background: var(--teal); color: #fff; font-size: 0.88rem; font-weight: 600;
-    padding: 11px; border-radius: 7px; border: none; cursor: pointer;
-    transition: background 0.2s;
+    padding: 11px; border-radius: 7px; border: none; cursor: pointer; transition: background 0.2s;
   }
   .admin-submit:hover { background: var(--teal-light); }
   .admin-list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
@@ -318,7 +307,7 @@
   .admin-del:hover { background: var(--paid-badge); color: #fff; }
   .link-hint { font-size: 0.78rem; color: var(--gray-500); margin-top: -6px; }
   .toast {
-    position: fixed; bottom: 28px; right: 28px; z-index: 2000;
+    position: fixed; bottom: 76px; right: 28px; z-index: 2000;
     background: var(--navy); color: #fff; padding: 14px 22px; border-radius: 10px;
     font-size: 0.88rem; display: flex; align-items: center; gap: 8px;
     box-shadow: 0 6px 24px rgba(0,0,0,0.22); transform: translateY(80px); opacity: 0;
@@ -337,12 +326,8 @@
     footer { padding: 24px 18px; flex-direction: column; align-items: flex-start; }
   }
 
-
-
   /* ── WORD-BY-WORD BANNER ── */
-  .sticky-top {
-    position: sticky; top: 80px; z-index: 190;
-  }
+  .sticky-top { position: sticky; top: 80px; z-index: 190; }
   .wbw-wrap {
     background: linear-gradient(90deg, #061528 0%, #0d2540 40%, #0a3050 60%, #061528 100%);
     border-top: 2px solid var(--teal);
@@ -355,21 +340,15 @@
     gap: 12px; text-align: center; max-width: 1100px;
   }
   .wbw-word {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.48rem; font-weight: 600;
+    font-family: 'DM Sans', sans-serif; font-size: 1.48rem; font-weight: 600;
     color: #c8e0f4; letter-spacing: 0.01em;
     opacity: 0; transform: translateY(12px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease; display: inline-block;
   }
-  .wbw-word.em {
-    color: var(--gold-light); font-weight: 800;
-  }
+  .wbw-word.em { color: var(--gold-light); font-weight: 800; }
   .wbw-cursor {
-    display: inline-block;
-    width: 3px; height: 1.5rem;
-    background: var(--teal-light);
-    margin-left: 2px; vertical-align: middle;
+    display: inline-block; width: 3px; height: 1.5rem;
+    background: var(--teal-light); margin-left: 2px; vertical-align: middle;
     animation: blink 0.7s step-end infinite;
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -382,89 +361,45 @@
   }
   .wbw-word.yt-pill svg { width: 19px; height: 19px; fill: #ff4444; flex-shrink: 0; }
   .wbw-word.visible { opacity: 1; transform: translateY(0); }
-  .wbw-pips {
-    position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 6px;
-  }
-  .wbw-pip {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: rgba(255,255,255,0.18); transition: background 0.3s, transform 0.3s;
-  }
+  .wbw-pips { position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+  .wbw-pip { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.18); transition: background 0.3s, transform 0.3s; }
   .wbw-pip.on { background: var(--teal-light); transform: scale(1.35); }
 
   /* ── YOUTUBE SCROLL BAR ── */
   .yt-scroll-bar {
-    background: #0a0a0a;
-    border-top: 3px solid #ff0000;
-    overflow: hidden;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 9999;
+    background: #0a0a0a; border-top: 3px solid #ff0000;
+    overflow: hidden; height: 48px; display: flex; align-items: center;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
   }
   body { padding-bottom: 48px; }
   .yt-scroll-track {
-    display: flex;
-    align-items: center;
-    gap: 0;
+    display: flex; align-items: center; gap: 0;
     animation: yt-marquee 28s linear infinite;
-    will-change: transform;
-    white-space: nowrap;
-    flex-shrink: 0;
+    will-change: transform; white-space: nowrap; flex-shrink: 0;
   }
-  .yt-scroll-bar:hover .yt-scroll-track {
-    animation-play-state: paused;
-  }
-  @keyframes yt-marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  .yt-scroll-bar:hover .yt-scroll-track { animation-play-state: paused; }
+  @keyframes yt-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   .yt-scroll-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    padding: 0 52px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.93rem;
-    font-weight: 600;
-    color: #e8e8e8;
-    letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; gap: 14px; padding: 0 52px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.93rem; font-weight: 600;
+    color: #e8e8e8; letter-spacing: 0.02em;
   }
   .yt-scroll-item .yt-icon {
     display: inline-flex; align-items: center; justify-content: center;
-    background: #ff0000; border-radius: 7px;
-    width: 30px; height: 22px; flex-shrink: 0;
+    background: #ff0000; border-radius: 7px; width: 30px; height: 22px; flex-shrink: 0;
   }
   .yt-scroll-item .yt-icon svg { width: 18px; height: 18px; fill: #fff; }
-  .yt-scroll-item .yt-channel {
-    color: #ff4444; font-weight: 800; letter-spacing: 0.01em;
-  }
-  .yt-scroll-item .yt-highlight {
-    color: #ffd700; font-weight: 700;
-  }
+  .yt-scroll-item .yt-channel { color: #ff4444; font-weight: 800; letter-spacing: 0.01em; }
+  .yt-scroll-item .yt-highlight { color: #ffd700; font-weight: 700; }
   .yt-scroll-item .yt-sub-btn {
-    display: inline-flex; align-items: center;
-    background: #ff0000; color: #fff;
+    display: inline-flex; align-items: center; background: #ff0000; color: #fff;
     font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 4px; cursor: pointer; text-decoration: none;
-    transition: background 0.2s;
+    padding: 4px 12px; border-radius: 4px; cursor: pointer; text-decoration: none; transition: background 0.2s;
   }
   .yt-scroll-item .yt-sub-btn:hover { background: #cc0000; }
-  .yt-scroll-sep {
-    color: #ff4444; font-size: 1.1rem; opacity: 0.6; padding: 0 8px;
-  }
-  .yt-scroll-fade-l {
-    position: absolute; left: 0; top: 0; bottom: 0; width: 60px;
-    background: linear-gradient(to right, #0a0a0a, transparent);
-    z-index: 2; pointer-events: none;
-  }
-  .yt-scroll-fade-r {
-    position: absolute; right: 0; top: 0; bottom: 0; width: 60px;
-    background: linear-gradient(to left, #0a0a0a, transparent);
-    z-index: 2; pointer-events: none;
-  }
+  .yt-scroll-sep { color: #ff4444; font-size: 1.1rem; opacity: 0.6; padding: 0 8px; }
+  .yt-scroll-fade-l { position: absolute; left: 0; top: 0; bottom: 0; width: 60px; background: linear-gradient(to right, #0a0a0a, transparent); z-index: 2; pointer-events: none; }
+  .yt-scroll-fade-r { position: absolute; right: 0; top: 0; bottom: 0; width: 60px; background: linear-gradient(to left, #0a0a0a, transparent); z-index: 2; pointer-events: none; }
 
   /* ── PRICING SECTION ── */
   .pricing-band { background: var(--gray-100); padding: 80px 40px; }
@@ -477,10 +412,7 @@
     transition: box-shadow 0.2s, border-color 0.2s;
   }
   .plan-card:hover { box-shadow: 0 8px 32px rgba(11,31,58,0.12); border-color: var(--teal); }
-  .plan-card.featured {
-    background: var(--navy); border-color: var(--teal);
-    box-shadow: 0 12px 40px rgba(11,31,58,0.22);
-  }
+  .plan-card.featured { background: var(--navy); border-color: var(--teal); box-shadow: 0 12px 40px rgba(11,31,58,0.22); }
   .plan-badge {
     position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
     background: var(--gold); color: var(--navy); font-size: 0.72rem; font-weight: 800;
@@ -520,65 +452,144 @@
   .per-doc-info .per-doc-sub { font-size: 0.88rem; color: var(--gray-500); margin-top: 4px; }
 
   /* ── CART PANEL ── */
-  .cart-overlay {
-    display: none; position: fixed; inset: 0; z-index: 1100;
-    background: rgba(6,15,28,0.65); backdrop-filter: blur(4px);
-    align-items: flex-start; justify-content: flex-end;
-  }
-  .cart-overlay.open { display: flex; }
-  .cart-panel {
-    background: #fff; width: 400px; max-width: 100vw; height: 100vh;
-    overflow-y: auto; display: flex; flex-direction: column;
-    box-shadow: -8px 0 40px rgba(0,0,0,0.24);
-  }
-  .cart-header {
-    background: var(--navy); padding: 20px 24px;
-    display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
-  }
-  .cart-header h3 { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
-  .cart-close { background: none; border: none; color: #a8c0d6; cursor: pointer; font-size: 1.3rem; }
-  .cart-body { padding: 20px 24px; flex: 1; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
-  #cartItemsList { display: flex; flex-direction: column; gap: 10px; }
-  .cart-empty { color: var(--gray-500); font-size: 0.9rem; text-align: center; padding: 40px 0; }
-  .cart-item {
-    display: flex; align-items: center; gap: 12px;
-    background: var(--gray-100); border-radius: 8px; padding: 12px 14px;
-    border: 1px solid var(--gray-200);
-  }
-  .cart-item-info { flex: 1; min-width: 0; }
-  .cart-item-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); line-height: 1.3; word-break: break-word; }
-  .cart-item-price { font-size: 0.9rem; color: var(--teal); font-weight: 700; margin-top: 4px; }
-  .cart-item-del {
-    flex-shrink: 0;
-    width: 28px; height: 28px;
-    background: #fff; border: 1.5px solid #e0e0e0;
-    border-radius: 50%; color: #999; cursor: pointer;
-    font-size: 0.85rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.15s;
-  }
-  .cart-item-del:hover { background: #ffeaea; border-color: var(--paid-badge); color: var(--paid-badge); }
-  .cart-footer { padding: 20px 24px; border-top: 1.5px solid var(--gray-200); flex-shrink: 0; }
-  .cart-total { display: flex; justify-content: space-between; font-weight: 700; font-size: 1rem; color: var(--navy); margin-bottom: 14px; }
-  .cart-checkout-form { display: flex; flex-direction: column; gap: 10px; }
-  .cart-input {
-    padding: 10px 14px; border-radius: 7px; border: 1.5px solid var(--gray-200);
-    font-family: inherit; font-size: 0.88rem; outline: none; transition: border-color 0.2s;
-  }
-  .cart-input:focus { border-color: var(--teal); }
-  .cart-pay-btn {
-    background: var(--teal); color: #fff; font-size: 0.9rem; font-weight: 700;
-    padding: 13px; border-radius: 8px; border: none; cursor: pointer;
-    transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
-  .cart-pay-btn:hover { background: var(--teal-light); }
-  .cart-notice { font-size: 0.76rem; color: var(--gray-500); text-align: center; margin-top: 8px; line-height: 1.5; }
   .cart-count {
     background: var(--gold); color: var(--navy); border-radius: 50%;
     width: 18px; height: 18px; font-size: 0.68rem; font-weight: 800;
     display: inline-flex; align-items: center; justify-content: center;
-    margin-left: 4px; vertical-align: middle;
+    margin-left: 4px; vertical-align: middle; transition: transform 0.2s;
   }
+  .cart-count.bump { transform: scale(1.4); }
+  .cart-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1100;
+    background: rgba(6,15,28,0.68); backdrop-filter: blur(5px);
+    align-items: flex-start; justify-content: flex-end;
+  }
+  .cart-overlay.open { display: flex; }
+  .cart-panel {
+    background: #fff; width: 420px; max-width: 100vw; height: 100vh;
+    overflow-y: auto; display: flex; flex-direction: column;
+    box-shadow: -8px 0 48px rgba(0,0,0,0.28);
+    animation: slideInRight 0.26s cubic-bezier(0.22,1,0.36,1);
+  }
+  @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+  .cart-header {
+    background: var(--navy); padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+    border-bottom: 2px solid rgba(15,123,140,0.4);
+  }
+  .cart-header h3 { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+  .cart-header-sub { font-size: 0.72rem; color: #7a9ab8; margin-top: 2px; }
+  .cart-close {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    color: #a8c0d6; cursor: pointer; border-radius: 8px; padding: 7px;
+    display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+  }
+  .cart-close:hover { background: rgba(255,255,255,0.2); color: #fff; }
+  .cart-body { padding: 20px 24px; flex: 1; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
+  .cart-empty { color: var(--gray-500); font-size: 0.9rem; text-align: center; padding: 48px 0 32px; }
+  .cart-empty-icon { font-size: 2.8rem; margin-bottom: 10px; opacity: 0.4; }
+  .cart-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--gray-100); border-radius: 10px; padding: 13px 14px;
+    border: 1.5px solid var(--gray-200); transition: border-color 0.15s;
+    animation: fadeInUp 0.22s ease;
+  }
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  .cart-item:hover { border-color: var(--teal); }
+  .cart-item-icon {
+    width: 36px; height: 36px; background: rgba(15,123,140,0.1); border-radius: 7px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+  }
+  .cart-item-icon svg { width: 18px; height: 18px; stroke: var(--teal); fill: none; stroke-width: 2; }
+  .cart-item-info { flex: 1; min-width: 0; }
+  .cart-item-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); line-height: 1.35; }
+  .cart-item-cat { font-size: 0.72rem; color: var(--gray-500); margin-top: 3px; }
+  .cart-item-price { font-size: 0.92rem; color: var(--teal); font-weight: 800; margin-top: 5px; }
+  .cart-item-del {
+    flex-shrink: 0; width: 28px; height: 28px; background: #fff;
+    border: 1.5px solid var(--gray-200); border-radius: 50%; color: #aaa; cursor: pointer;
+    font-size: 0.8rem; display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+  }
+  .cart-item-del:hover { background: #ffeaea; border-color: var(--paid-badge); color: var(--paid-badge); }
+  .cart-divider { border: none; border-top: 1.5px solid var(--gray-200); margin: 4px 0; }
+  .cart-footer { padding: 20px 24px; border-top: 1.5px solid var(--gray-200); flex-shrink: 0; background: #fafcff; }
+  .cart-total-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1.5px solid var(--gray-200);
+  }
+  .cart-total-label { font-size: 0.82rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .cart-total-amount { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--navy); }
+  .cart-form-fields { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .cart-input {
+    padding: 11px 14px; border-radius: 8px; border: 1.5px solid var(--gray-200);
+    font-family: inherit; font-size: 0.88rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%; color: var(--navy); background: #fff;
+  }
+  .cart-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(15,123,140,0.1); }
+  .cart-input::placeholder { color: #aab4be; }
+  .cart-input.error { border-color: var(--paid-badge); }
+  .cart-field-err { font-size: 0.75rem; color: var(--paid-badge); margin-top: -6px; display: none; }
+  .cart-field-err.show { display: block; }
+  #paypal-button-container { min-height: 48px; }
+  #paypal-button-container.hidden { display: none; }
+  .cart-pay-note {
+    font-size: 0.72rem; color: var(--gray-500); text-align: center;
+    margin-top: 10px; line-height: 1.55; display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  /* ── POST-PAYMENT SUCCESS STATE ── */
+  .cart-success { display: none; flex-direction: column; gap: 0; }
+  .cart-success.show { display: flex; }
+  .cart-success-header {
+    background: linear-gradient(135deg, #0d3320, #0a2518);
+    padding: 22px 24px; border-bottom: 2px solid rgba(74,222,128,0.3);
+  }
+  .cart-success-icon {
+    width: 52px; height: 52px; background: rgba(74,222,128,0.15);
+    border: 2px solid rgba(74,222,128,0.4); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #4ade80; margin-bottom: 12px;
+  }
+  .cart-success-header h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; margin-bottom: 4px; }
+  .cart-success-header p { font-size: 0.8rem; color: #6bbd8a; line-height: 1.5; }
+  .cart-success-body { padding: 20px 24px; flex: 1; overflow-y: auto; }
+  .cart-success-label {
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .cart-success-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-200); }
+  .unlocked-doc {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--gray-100); border-radius: 10px; padding: 13px 15px;
+    border: 1.5px solid var(--gray-200); margin-bottom: 10px; transition: all 0.2s;
+  }
+  .unlocked-doc:hover { border-color: var(--teal); box-shadow: 0 2px 12px rgba(15,123,140,0.1); }
+  .unlocked-doc-icon {
+    width: 36px; height: 36px; background: rgba(15,123,140,0.1); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .unlocked-doc-icon svg { width: 18px; height: 18px; stroke: var(--teal); fill: none; }
+  .unlocked-doc-name { flex: 1; font-size: 0.85rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .unlocked-doc-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--teal); color: #fff; font-size: 0.76rem; font-weight: 700;
+    padding: 7px 13px; border-radius: 6px; text-decoration: none; white-space: nowrap;
+    transition: background 0.2s; flex-shrink: 0;
+  }
+  .unlocked-doc-link:hover { background: var(--teal-light); }
+  .cart-email-note {
+    background: rgba(15,123,140,0.06); border: 1.5px solid rgba(15,123,140,0.18);
+    border-radius: 9px; padding: 13px 15px; margin-top: 6px;
+    font-size: 0.8rem; color: var(--gray-700); line-height: 1.6;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .cart-email-note svg { flex-shrink: 0; color: var(--teal); margin-top: 1px; }
+  /* ── SUBSCRIPTION MODAL ── */
+  .sub-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1100;
+    background: rgba(6,15,28,0.68); backdrop-filter: blur(5px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .sub-overlay.open { display: flex; }
 
   /* ── CONSULTANCY SECTION ── */
   .consult-band { background: var(--navy); padding: 80px 40px; }
@@ -590,17 +601,11 @@
     transition: background 0.2s, border-color 0.2s;
   }
   .consult-card:hover { background: rgba(15,123,140,0.12); border-color: var(--teal); }
-  .consult-icon {
-    width: 52px; height: 52px; background: rgba(15,123,140,0.2); border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-  }
+  .consult-icon { width: 52px; height: 52px; background: rgba(15,123,140,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
   .consult-icon svg { width: 28px; height: 28px; stroke: var(--teal-light); fill: none; stroke-width: 1.8; }
   .consult-title { font-size: 1.05rem; font-weight: 700; color: #fff; }
   .consult-desc { font-size: 0.85rem; color: #7a9ab8; line-height: 1.65; flex: 1; }
-  .consult-link {
-    font-size: 0.83rem; color: var(--teal-light); font-weight: 600; text-decoration: none;
-    display: flex; align-items: center; gap: 5px;
-  }
+  .consult-link { font-size: 0.83rem; color: var(--teal-light); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 5px; }
   .consult-link:hover { color: var(--gold); }
   .consult-cta {
     background: rgba(200,151,43,0.1); border: 1.5px solid var(--gold);
@@ -626,11 +631,9 @@
   }
   .view-btn.active { border-color: var(--teal); color: var(--teal); background: rgba(15,123,140,0.06); }
   .doc-scroll-wrap {
-    max-height: 560px; overflow-y: auto;
-    padding-right: 10px;
+    max-height: 560px; overflow-y: auto; padding-right: 10px;
     scrollbar-width: thin; scrollbar-color: var(--teal) #e2eaf2;
-    border: 1.5px solid var(--gray-200); border-radius: 10px; padding: 12px 14px;
-    background: #fafcff;
+    border: 1.5px solid var(--gray-200); border-radius: 10px; padding: 12px 14px; background: #fafcff;
   }
   .doc-scroll-wrap::-webkit-scrollbar { width: 9px; }
   .doc-scroll-wrap::-webkit-scrollbar-track { background: #e2eaf2; border-radius: 6px; }
@@ -648,28 +651,14 @@
   .doc-list-item:first-child { border-top: 1px solid var(--gray-100); border-radius: 8px 8px 0 0; }
   .doc-list-item:last-child { border-radius: 0 0 8px 8px; }
   .doc-list-item:hover { background: rgba(15,123,140,0.05); }
-  .doc-list-num {
-    width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.72rem; font-weight: 700; color: var(--gray-500); flex-shrink: 0;
-  }
-  .doc-list-icon { flex-shrink: 0; }
-  .doc-list-icon svg { width: 18px; height: 18px; }
-  .doc-list-name {
-    flex: 1; font-size: 0.94rem; font-weight: 700; color: #0a6e7e;
-    text-decoration: underline; text-decoration-color: transparent;
-    transition: all 0.15s; cursor: pointer;
-  }
-  .doc-list-item:hover .doc-list-name { color: var(--teal); text-decoration-color: var(--teal); text-shadow: 0 0 1px rgba(15,123,140,0.15); }
-  .doc-list-cat {
-    font-size: 0.75rem; color: var(--gray-500); background: var(--gray-100);
-    padding: 3px 9px; border-radius: 8px; white-space: nowrap;
-  }
+  .doc-list-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; color: var(--gray-500); flex-shrink: 0; }
+  .doc-list-name { flex: 1; font-size: 0.94rem; font-weight: 700; color: #0a6e7e; text-decoration: underline; text-decoration-color: transparent; transition: all 0.15s; cursor: pointer; }
+  .doc-list-item:hover .doc-list-name { color: var(--teal); text-decoration-color: var(--teal); }
+  .doc-list-cat { font-size: 0.75rem; color: var(--gray-500); background: var(--gray-100); padding: 3px 9px; border-radius: 8px; white-space: nowrap; }
   .doc-list-badge { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
   .doc-list-action {
     font-size: 0.78rem; font-weight: 700; padding: 6px 14px; border-radius: 6px;
-    border: none; cursor: pointer; white-space: nowrap; text-decoration: none;
-    transition: all 0.15s;
+    border: none; cursor: pointer; white-space: nowrap; text-decoration: none; transition: all 0.15s;
   }
   .list-free-btn { background: rgba(15,123,140,0.1); color: var(--teal); }
   .list-free-btn:hover { background: var(--teal); color: #fff; }
@@ -678,221 +667,179 @@
 
   /* ── HERO GALLERY PANEL ── */
   .hero-gallery-panel {
-    position: relative;
-    width: 360px;
-    height: 288px;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1.5px solid rgba(15,123,140,0.35);
+    position: relative; width: 360px; height: 288px; border-radius: 14px;
+    overflow: hidden; border: 1.5px solid rgba(15,123,140,0.35);
     background: rgba(6,15,28,0.7);
-    box-shadow: 0 0 60px rgba(15,123,140,0.15), 0 0 0 1px rgba(15,123,140,0.08);
-    flex-shrink: 0;
+    box-shadow: 0 0 60px rgba(15,123,140,0.15), 0 0 0 1px rgba(15,123,140,0.08); flex-shrink: 0;
   }
-  .hero-gallery-panel::before {
-    content:''; position:absolute; top:0; left:0; width:28px; height:28px;
-    border-top:2px solid var(--teal-light); border-left:2px solid var(--teal-light);
-    z-index:10; border-radius:14px 0 0 0; pointer-events:none;
-  }
-  .hero-gallery-panel::after {
-    content:''; position:absolute; bottom:0; right:0; width:28px; height:28px;
-    border-bottom:2px solid var(--gold); border-right:2px solid var(--gold);
-    z-index:10; pointer-events:none;
-  }
-  .hg-label {
-    position:absolute; top:14px; left:14px; z-index:15;
-    background: rgba(6,15,28,0.85);
-    border: 1px solid rgba(15,123,140,0.4);
-    padding:5px 12px; border-radius:20px;
-    font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--teal-light);
-    display:flex; align-items:center; gap:7px;
-  }
-  .hg-dot {
-    width:7px; height:7px; border-radius:50%;
-    background:var(--gold);
-    animation: hgpulse 1.6s ease infinite;
-  }
+  .hero-gallery-panel::before { content:''; position:absolute; top:0; left:0; width:28px; height:28px; border-top:2px solid var(--teal-light); border-left:2px solid var(--teal-light); z-index:10; border-radius:14px 0 0 0; pointer-events:none; }
+  .hero-gallery-panel::after { content:''; position:absolute; bottom:0; right:0; width:28px; height:28px; border-bottom:2px solid var(--gold); border-right:2px solid var(--gold); z-index:10; pointer-events:none; }
+  .hg-label { position:absolute; top:14px; left:14px; z-index:15; background: rgba(6,15,28,0.85); border: 1px solid rgba(15,123,140,0.4); padding:5px 12px; border-radius:20px; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal-light); display:flex; align-items:center; gap:7px; }
+  .hg-dot { width:7px; height:7px; border-radius:50%; background:var(--gold); animation: hgpulse 1.6s ease infinite; }
   @keyframes hgpulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.65)} }
-
   .hg-slides { position:absolute; inset:0; }
-  .hg-slide {
-    position:absolute; inset:0;
-    opacity:0; filter:blur(10px);
-    transition: opacity 1.4s ease-in-out, filter 1.4s ease-in-out;
-  }
+  .hg-slide { position:absolute; inset:0; opacity:0; filter:blur(10px); transition: opacity 1.4s ease-in-out, filter 1.4s ease-in-out; }
   .hg-slide.active { opacity:1; filter:blur(0); }
   .hg-slide img { width:100%; height:100%; object-fit:contain; display:block; background:#060f1c; }
-  .hg-slide-placeholder {
-    width:100%; height:100%;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
-    font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
-    color:rgba(120,160,200,0.7);
-  }
+  .hg-slide-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(120,160,200,0.7); }
   .hg-slide-placeholder svg { opacity:0.18; }
-  .hg-slide-caption {
-    position:absolute; bottom:0; left:0; right:0;
-    background: linear-gradient(to top, rgba(6,15,28,0.96) 0%, rgba(6,15,28,0.4) 55%, transparent 100%);
-    padding:44px 18px 14px;
-    font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--teal-light);
-  }
-  .hg-dots {
-    position:absolute; bottom:16px; right:16px; z-index:15;
-    display:flex; gap:5px; align-items:center;
-  }
-  .hg-nav-dot {
-    width:6px; height:6px; border-radius:50%;
-    background:rgba(255,255,255,0.22); border:none; cursor:pointer;
-    transition:all 0.35s; padding:0;
-  }
+  .hg-slide-caption { position:absolute; bottom:0; left:0; right:0; background: linear-gradient(to top, rgba(6,15,28,0.96) 0%, rgba(6,15,28,0.4) 55%, transparent 100%); padding:44px 18px 14px; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-light); }
+  .hg-dots { position:absolute; bottom:16px; right:16px; z-index:15; display:flex; gap:5px; align-items:center; }
+  .hg-nav-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.22); border:none; cursor:pointer; transition:all 0.35s; padding:0; }
   .hg-nav-dot.active { background:var(--teal-light); width:20px; border-radius:3px; }
-  .hg-progress {
-    position:absolute; bottom:0; left:0; height:3px;
-    background:var(--teal); width:0%;
-    box-shadow:0 0 8px var(--teal); z-index:15;
-  }
-
-  /* ── EARLY SUBSCRIBER BANNER ── */
-  .early-sub-bar {
-    background: linear-gradient(90deg, #0a1a0f 0%, #0d2015 35%, #061a0a 100%);
-    border-top: 2px solid #1a7a35;
-    border-bottom: 1px solid rgba(26,122,53,0.3);
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-  }
-  .early-sub-inner {
-    display: flex; align-items: stretch;
-    max-width: 1300px; margin: 0 auto;
-  }
-  .early-sub-badge {
-    background: #1a7a35; color: #fff;
-    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 14px 20px; display:flex; align-items:center; gap:8px;
-    white-space:nowrap; flex-shrink:0;
-  }
-  .early-sub-content {
-    flex:1; display:flex; align-items:center; gap:28px; padding:12px 24px; flex-wrap:wrap;
-  }
-  .early-sub-text { font-size:0.9rem; font-weight:600; color:#c8f0d4; line-height:1.5; }
-  .early-sub-text strong { color:#4ade80; }
-  .early-sub-counter {
-    display:flex; align-items:center; gap:10px; flex-shrink:0;
-  }
-  .sub-count-box {
-    background:rgba(26,122,53,0.25); border:1px solid rgba(74,222,128,0.3);
-    border-radius:8px; padding:8px 16px; text-align:center;
-  }
-  .sub-count-num {
-    font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:#4ade80; line-height:1;
-  }
-  .sub-count-lbl { font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#6bbd8a; margin-top:2px; }
-  .early-sub-btn {
-    background:#1a7a35; color:#fff;
-    font-size:0.82rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
-    padding:10px 22px; border-radius:6px; border:none; cursor:pointer;
-    text-decoration:none; white-space:nowrap;
-    transition:background 0.2s;
-    display:inline-flex; align-items:center; gap:8px;
-    flex-shrink:0;
-  }
-  .early-sub-btn:hover { background:#22a044; }
+  .hg-progress { position:absolute; bottom:0; left:0; height:3px; background:var(--teal); width:0%; box-shadow:0 0 8px var(--teal); z-index:15; }
 
   /* ── ADMIN LOGIN OVERLAY ── */
-  .admin-login-overlay {
-    display:none; position:fixed; inset:0; z-index:1500;
-    background:rgba(6,15,28,0.88); backdrop-filter:blur(6px);
-    align-items:center; justify-content:center;
-  }
+  .admin-login-overlay { display:none; position:fixed; inset:0; z-index:1500; background:rgba(6,15,28,0.88); backdrop-filter:blur(6px); align-items:center; justify-content:center; }
   .admin-login-overlay.open { display:flex; }
-  .admin-login-box {
-    background:#fff; border-radius:14px; width:380px; max-width:95vw;
-    overflow:hidden; box-shadow:0 16px 60px rgba(0,0,0,0.35);
-  }
-  .admin-login-header {
-    background:var(--navy); padding:20px 24px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
+  .admin-login-box { background:#fff; border-radius:14px; width:380px; max-width:95vw; overflow:hidden; box-shadow:0 16px 60px rgba(0,0,0,0.35); }
+  .admin-login-header { background:var(--navy); padding:20px 24px; display:flex; align-items:center; justify-content:space-between; }
   .admin-login-header h3 { color:#fff; font-family:'Playfair Display',serif; font-size:1.1rem; }
   .admin-login-close { background:none; border:none; color:#a8c0d6; cursor:pointer; font-size:1.2rem; }
   .admin-login-body { padding:24px; display:flex; flex-direction:column; gap:14px; }
-  .admin-login-err {
-    background:rgba(200,64,26,0.08); border:1px solid rgba(200,64,26,0.3);
-    color:var(--paid-badge); font-size:0.82rem; padding:9px 14px; border-radius:6px; display:none;
-  }
+  .admin-login-err { background:rgba(200,64,26,0.08); border:1px solid rgba(200,64,26,0.3); color:var(--paid-badge); font-size:0.82rem; padding:9px 14px; border-radius:6px; display:none; }
   .admin-login-err.show { display:block; }
-  .admin-login-input {
-    width:100%; padding:11px 14px; border-radius:7px;
-    border:1.5px solid var(--gray-200); font-family:inherit; font-size:0.95rem;
-    outline:none; transition:border 0.2s; letter-spacing:0.1em;
-  }
+  .admin-login-input { width:100%; padding:11px 14px; border-radius:7px; border:1.5px solid var(--gray-200); font-family:inherit; font-size:0.95rem; outline:none; transition:border 0.2s; letter-spacing:0.1em; }
   .admin-login-input:focus { border-color:var(--teal); }
-  .admin-login-btn {
-    background:var(--teal); color:#fff; font-size:0.9rem; font-weight:700;
-    padding:12px; border-radius:7px; border:none; cursor:pointer; transition:background 0.2s;
-  }
+  .admin-login-btn { background:var(--teal); color:#fff; font-size:0.9rem; font-weight:700; padding:12px; border-radius:7px; border:none; cursor:pointer; transition:background 0.2s; }
   .admin-login-btn:hover { background:var(--teal-light); }
-
-  /* Gallery upload in admin */
-  .gallery-upload-zone {
-    border:2px dashed rgba(15,123,140,0.35); padding:22px; text-align:center;
-    cursor:pointer; border-radius:8px; background:rgba(15,123,140,0.03);
-    position:relative; transition:all 0.2s;
-  }
-  .gallery-upload-zone:hover, .gallery-upload-zone.drag-over {
-    border-color:var(--teal); background:rgba(15,123,140,0.07);
-  }
-  .gallery-upload-zone input[type="file"] {
-    position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%;
-  }
+  .gallery-upload-zone { border:2px dashed rgba(15,123,140,0.35); padding:22px; text-align:center; cursor:pointer; border-radius:8px; background:rgba(15,123,140,0.03); position:relative; transition:all 0.2s; }
+  .gallery-upload-zone:hover, .gallery-upload-zone.drag-over { border-color:var(--teal); background:rgba(15,123,140,0.07); }
+  .gallery-upload-zone input[type="file"] { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
   .gallery-upload-hint { font-size:0.75rem; color:var(--gray-500); margin-top:5px; }
-  .gallery-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px;
-  }
-  .gallery-thumb {
-    position:relative; border-radius:6px; overflow:hidden;
-    border:1px solid var(--gray-200); background:var(--gray-100);
-  }
+  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+  .gallery-thumb { position:relative; border-radius:6px; overflow:hidden; border:1px solid var(--gray-200); background:var(--gray-100); }
   .gallery-thumb img { width:100%; height:72px; object-fit:cover; display:block; }
-  .gallery-thumb-del {
-    position:absolute; top:3px; right:3px;
-    background:rgba(200,64,26,0.85); border:none; color:#fff;
-    width:20px; height:20px; border-radius:3px; cursor:pointer; font-size:11px;
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; transition:opacity 0.2s;
-  }
+  .gallery-thumb-del { position:absolute; top:3px; right:3px; background:rgba(200,64,26,0.85); border:none; color:#fff; width:20px; height:20px; border-radius:3px; cursor:pointer; font-size:11px; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s; }
   .gallery-thumb:hover .gallery-thumb-del { opacity:1; }
-  .gallery-thumb-name {
-    padding:3px 6px; font-size:0.68rem; color:var(--gray-500); overflow:hidden;
-    text-overflow:ellipsis; white-space:nowrap; background:rgba(255,255,255,0.9);
-    cursor:text;
-  }
-  .gallery-thumb-name input {
-    width:100%; border:none; outline:none; background:transparent;
-    font-size:0.68rem; color:var(--navy); font-family:inherit; font-weight:600;
-    padding:0;
-  }
-  /* Rename overlay on hero slide caption */
-  .hg-caption-input {
-    background:transparent; border:none; border-bottom:1px dashed var(--teal-light);
-    color:var(--teal-light); font-size:0.72rem; font-weight:700;
-    letter-spacing:0.1em; text-transform:uppercase; font-family:inherit;
-    outline:none; width:calc(100% - 36px); cursor:text;
-  }
-  .hg-rename-hint {
-    position:absolute; bottom:6px; right:10px; z-index:20;
-    font-size:0.6rem; color:rgba(26,171,184,0.55); letter-spacing:0.06em;
-    pointer-events:none;
-  }
-
-  /* Change password in admin */
+  .gallery-thumb-name { padding:3px 6px; font-size:0.68rem; color:var(--gray-500); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; background:rgba(255,255,255,0.9); cursor:text; }
+  .gallery-thumb-name input { width:100%; border:none; outline:none; background:transparent; font-size:0.68rem; color:var(--navy); font-family:inherit; font-weight:600; padding:0; }
+  .hg-caption-input { background:transparent; border:none; border-bottom:1px dashed var(--teal-light); color:var(--teal-light); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; font-family:inherit; outline:none; width:calc(100% - 36px); cursor:text; }
+  .hg-rename-hint { position:absolute; bottom:6px; right:10px; z-index:20; font-size:0.6rem; color:rgba(26,171,184,0.55); letter-spacing:0.06em; pointer-events:none; }
   .admin-pw-row { display:flex; gap:10px; margin-bottom:10px; }
   .admin-pw-row input { flex:1; }
   .admin-msg { font-size:0.78rem; padding:8px 12px; border-radius:6px; margin-top:6px; display:none; }
   .admin-msg.ok  { background:rgba(30,140,74,0.1); border:1px solid rgba(30,140,74,0.3); color:var(--free-badge); display:block; }
   .admin-msg.err { background:rgba(200,64,26,0.08); border:1px solid rgba(200,64,26,0.3); color:var(--paid-badge); display:block; }
 
+  /* ── REQUEST MODAL ── */
+  .req-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1300;
+    background: rgba(6,15,28,0.78); backdrop-filter: blur(7px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .req-overlay.open { display: flex; }
+  .req-modal {
+    background: #fff; border-radius: 18px; width: 100%; max-width: 500px;
+    overflow: hidden; box-shadow: 0 28px 90px rgba(0,0,0,0.38);
+    animation: reqIn 0.3s cubic-bezier(0.34,1.46,0.64,1);
+  }
+  @keyframes reqIn {
+    from { opacity:0; transform: scale(0.90) translateY(16px); }
+    to   { opacity:1; transform: scale(1) translateY(0); }
+  }
+  .req-modal-header {
+    background: linear-gradient(135deg, #0b1f3a 0%, #0d2d50 50%, #0b2040 100%);
+    padding: 24px 28px 22px; display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 16px;
+    border-bottom: 2px solid rgba(15,123,140,0.45);
+    position: relative;
+  }
+  .req-modal-header::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(26,171,184,0.6), transparent);
+  }
+  .req-modal-eyebrow {
+    font-size: 0.67rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--teal-light); margin-bottom: 6px; display: flex; align-items: center; gap: 7px;
+  }
+  .req-modal-eyebrow::before {
+    content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0;
+    animation: hgpulse 1.6s ease infinite;
+  }
+  .req-modal-title {
+    font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff;
+    font-weight: 700; line-height: 1.3; margin: 0;
+  }
+  .req-modal-close {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+    color: #a8c0d6; cursor: pointer; border-radius: 9px; padding: 8px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s; flex-shrink: 0; margin-top: 2px;
+  }
+  .req-modal-close:hover { background: rgba(255,255,255,0.22); color: #fff; transform: rotate(90deg); }
+  .req-modal-body { padding: 26px 28px 28px; }
+  .req-doc-banner {
+    display: flex; align-items: center; gap: 11px;
+    background: linear-gradient(90deg, rgba(15,123,140,0.08), rgba(15,123,140,0.04));
+    border: 1.5px solid rgba(15,123,140,0.22);
+    border-left: 3px solid var(--teal);
+    border-radius: 10px; padding: 12px 15px; margin-bottom: 18px;
+  }
+  .req-doc-banner svg { flex-shrink: 0; color: var(--teal); }
+  .req-doc-banner span { font-size: 0.88rem; font-weight: 700; color: var(--navy); line-height: 1.35; }
+  .req-intro { font-size: 0.83rem; color: var(--gray-500); line-height: 1.65; margin-bottom: 22px; }
+  .req-form { display: flex; flex-direction: column; gap: 16px; }
+  .req-field { display: flex; flex-direction: column; gap: 6px; }
+  .req-label { font-size: 0.8rem; font-weight: 700; color: var(--gray-700); display: flex; align-items: center; gap: 4px; }
+  .req-required { color: var(--paid-badge); font-size: 0.85rem; }
+  .req-optional { color: var(--gray-500); font-weight: 400; font-size: 0.76rem; }
+  .req-input, .req-textarea {
+    padding: 11px 14px; border-radius: 9px; border: 1.5px solid var(--gray-200);
+    font-family: inherit; font-size: 0.9rem; color: var(--navy); outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s; background: #fff;
+  }
+  .req-input:focus, .req-textarea:focus {
+    border-color: var(--teal); box-shadow: 0 0 0 3px rgba(15,123,140,0.1);
+  }
+  .req-textarea { resize: vertical; min-height: 80px; }
+  .req-bottom-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px; flex-wrap: wrap; padding-top: 6px;
+    border-top: 1.5px solid var(--gray-100); margin-top: 4px;
+  }
+  .req-price-block { display: flex; align-items: baseline; gap: 7px; }
+  .req-price-tag { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--teal); line-height: 1; }
+  .req-price-note { font-size: 0.75rem; color: var(--gray-500); line-height: 1.4; max-width: 110px; }
+  .req-submit-btn {
+    background: var(--teal); color: #fff; font-size: 0.9rem; font-weight: 700;
+    padding: 12px 24px; border-radius: 9px; border: none; cursor: pointer;
+    display: flex; align-items: center; gap: 9px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(15,123,140,0.3);
+  }
+  .req-submit-btn:hover { background: var(--teal-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,123,140,0.4); }
+  .req-error {
+    font-size: 0.8rem; color: var(--paid-badge);
+    background: rgba(200,64,26,0.06); border-radius: 7px;
+    padding: 0; max-height: 0; overflow: hidden; border: 1px solid transparent;
+    transition: all 0.22s;
+  }
+  .req-error.show { padding: 9px 13px; max-height: 60px; border-color: rgba(200,64,26,0.22); }
+  .req-success {
+    text-align: center; padding: 10px 8px 6px;
+    animation: reqIn 0.32s ease;
+  }
+  .req-success-icon {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, rgba(30,140,74,0.12), rgba(30,140,74,0.06));
+    border: 2px solid rgba(30,140,74,0.35); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px; color: var(--free-badge);
+  }
+  .req-success h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; }
+  .req-success p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.65; }
+  .req-success p strong { color: var(--navy); }
+  .req-success-close {
+    margin-top: 20px; padding: 11px 28px; border-radius: 8px;
+    background: var(--teal); color: #fff; border: none; cursor: pointer;
+    font-size: 0.88rem; font-weight: 700; transition: background 0.2s;
+  }
+  .req-success-close:hover { background: var(--teal-light); }
 </style>
+
+<script src="https://www.paypal.com/sdk/js?client-id=Ae9ifPbJrRXdMbdiawK9pEJSwTqW3p7-9o_U2NRxRVpk0eWFDPntiMtxZOXzqSthOMWF3jTriO7HMQf-&currency=USD&intent=capture" data-sdk-integration-source="button-factory"></script>
 </head>
 <body>
 
@@ -918,7 +865,7 @@
       </div>
     </div>
     <a href="#software">RO Software Library</a>
-    <a href="#pricing">Pricing & Plans</a>
+    <a href="#pricing">Pricing &amp; Plans</a>
     <a href="#consultancy">Consultancy</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
@@ -934,8 +881,6 @@
   <div class="wbw-pips" id="wbwPips"></div>
 </div>
 </div>
-
-
 
 <!-- HERO -->
 <div id="hero" class="hero">
@@ -955,40 +900,33 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>
         Browse Free Documents
       </a>
-      <a href="#library" class="btn-outline" onclick="openFilter('paid')">
-        View Premium Library
-      </a>
+      <a href="#library" class="btn-outline" onclick="openFilter('paid')">View Premium Library</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num" id="statDocs">0</div><div class="lbl">Documents &amp; Drawings</div></div>
       <div class="hero-stat"><div class="num">30+</div><div class="lbl">Years Experience</div></div>
       <div class="hero-stat"><div class="num">5</div><div class="lbl">Design Tools</div></div>
     </div>
-  </div><!-- end hero-left-col -->
-
-  <!-- HERO GALLERY PANEL -->
+  </div>
   <div class="hero-gallery-panel" id="heroGallery">
     <div class="hg-label"><span class="hg-dot"></span> Live Gallery</div>
     <div class="hg-slides" id="hgSlides"></div>
     <div class="hg-dots" id="hgDots"></div>
     <div class="hg-progress" id="hgProgress"></div>
   </div>
-
-  </div><!-- end 2-col grid -->
-  </div><!-- end hero-inner -->
+  </div>
+  </div>
 </div>
 
 <!-- LIBRARY SECTION -->
 <section id="library">
   <div class="section-label">Resource Library</div>
   <h2 class="section-title">Design &amp; Training Documents</h2>
-  <p class="section-sub">Browse free and premium engineering resources. Free documents open directly; premium documents link to purchase or provide access via Google Drive.</p>
-
+  <p class="section-sub">Browse free and premium engineering resources. Free documents open directly; premium documents — submit a quick request and we'll send access within 24 hours.</p>
   <div class="library-tabs">
     <button class="tab-btn active" onclick="switchTab('docs', this)">📄 Design &amp; Training Documents</button>
     <button class="tab-btn" onclick="switchTab('drawings', this)">📐 Design Drawings Library</button>
   </div>
-
   <!-- DOCS TAB -->
   <div class="tab-panel active" id="tab-docs">
     <div class="filter-bar">
@@ -1005,11 +943,8 @@
         </button>
       </div>
     </div>
-    <div class="doc-scroll-wrap" id="scroll-docs">
-      <div class="doc-grid" id="grid-docs"></div>
-    </div>
+    <div class="doc-scroll-wrap" id="scroll-docs"><div class="doc-grid" id="grid-docs"></div></div>
   </div>
-
   <!-- DRAWINGS TAB -->
   <div class="tab-panel" id="tab-drawings">
     <div class="filter-bar">
@@ -1026,9 +961,7 @@
         </button>
       </div>
     </div>
-    <div class="doc-scroll-wrap" id="scroll-drawings">
-      <div class="doc-grid" id="grid-drawings"></div>
-    </div>
+    <div class="doc-scroll-wrap" id="scroll-drawings"><div class="doc-grid" id="grid-drawings"></div></div>
   </div>
 </section>
 
@@ -1040,18 +973,13 @@
   <div class="software-grid" id="software-grid"></div>
 </section>
 
-
 <!-- PRICING SECTION -->
 <div class="pricing-band" id="pricing">
   <div class="pricing-inner">
     <div class="section-label">Access Options</div>
     <h2 class="section-title" style="color:var(--navy)">Pricing &amp; Subscription Plans</h2>
-    <p class="section-sub">Choose pay-per-download or subscribe for unlimited monthly access. All purchases include a download link delivered directly to your email.</p>
-
-
+    <p class="section-sub">Choose pay-per-document or subscribe for monthly access. All purchases include a download link delivered directly to your email.</p>
     <div class="pricing-grid">
-
-      <!-- STARTER -->
       <div class="plan-card">
         <div class="plan-name">Starter</div>
         <div class="plan-price"><span class="amount">$10</span><span class="period">/ month</span></div>
@@ -1063,10 +991,8 @@
           <li><span class="chk">✓</span> Download link sent to your email</li>
           <li><span class="chk">✓</span> Cancel anytime</li>
         </ul>
-        <button class="plan-btn plan-btn-outline" onclick="subscribePlan('Starter', 10)">Get Starter Plan</button>
+        <button class="plan-btn plan-btn-outline" onclick="openSubModal('Starter', 10)">Get Starter Plan</button>
       </div>
-
-      <!-- PRO — FEATURED -->
       <div class="plan-card featured">
         <div class="plan-badge">Most Popular</div>
         <div class="plan-name">Professional</div>
@@ -1080,10 +1006,8 @@
           <li><span class="chk">✓</span> Download link sent to your email</li>
           <li><span class="chk">✓</span> Cancel anytime</li>
         </ul>
-        <button class="plan-btn plan-btn-gold" onclick="subscribePlan('Professional', 20)">Get Pro Plan</button>
+        <button class="plan-btn plan-btn-gold" onclick="openSubModal('Professional', 20)">Get Pro Plan</button>
       </div>
-
-      <!-- UNLIMITED -->
       <div class="plan-card">
         <div class="plan-name">Unlimited</div>
         <div class="plan-price"><span class="amount">$50</span><span class="period">/ month</span></div>
@@ -1096,55 +1020,93 @@
           <li><span class="chk">✓</span> Download link sent to your email</li>
           <li><span class="chk">✓</span> Priority support</li>
         </ul>
-        <button class="plan-btn plan-btn-solid" onclick="subscribePlan('Unlimited', 50)">Get Unlimited</button>
+        <button class="plan-btn plan-btn-solid" onclick="openSubModal('Unlimited', 50)">Get Unlimited</button>
       </div>
-
     </div>
-
-    <!-- PAY PER DOCUMENT -->
     <div class="per-doc-box">
       <div class="per-doc-info">
         <div class="per-doc-title">Pay Per Document</div>
-        <div class="per-doc-sub">No subscription needed. Each premium drawing or document is <strong>$5</strong>. Add to cart, checkout, and receive your download link by email instantly.</div>
+        <div class="per-doc-sub">No subscription needed. Each premium drawing or document is <strong>$5</strong>. Click "Request Document", fill your details, and we'll send access &amp; payment info by email.</div>
       </div>
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
         <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--teal)">$5 <span style="font-size:1rem;color:var(--gray-500);font-family:'DM Sans',sans-serif;font-weight:400">per doc</span></div>
         <a href="#library" class="btn-primary" style="text-decoration:none">Browse Documents</a>
       </div>
     </div>
-
   </div>
 </div>
 
 <!-- CART PANEL -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCartOutside(event)">
   <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>🛒 Your Cart</h3>
-      <button class="cart-close" onclick="closeCart()">✕</button>
-    </div>
-    <div class="cart-body" id="cartBody">
-      <div class="cart-empty" id="cartEmpty">Your cart is empty.<br>Browse premium documents to add items.</div>
-      <div id="cartItemsList"></div>
-    </div>
-    <div class="cart-footer" id="cartFooter" style="display:none">
-      <div class="cart-total"><span>Total</span><span id="cartTotal">$0</span></div>
-      <div class="cart-checkout-form">
-        <input class="cart-input" type="text" id="checkoutName" placeholder="Full Name *" required>
-        <input class="cart-input" type="email" id="checkoutEmail" placeholder="Email Address * (download link sent here)" required>
-        <button class="cart-pay-btn" onclick="processCheckout()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          Proceed to Payment
+
+    <!-- Normal cart view -->
+    <div id="cartNormal">
+      <div class="cart-header">
+        <div>
+          <h3>🛒 Your Cart</h3>
+          <div class="cart-header-sub">All premium documents are $5 each</div>
+        </div>
+        <button class="cart-close" onclick="closeCart()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
-        <div class="cart-notice">🔒 Secure checkout. Download link will be emailed within minutes of payment confirmation.</div>
+      </div>
+
+      <div class="cart-body" id="cartBody">
+        <div class="cart-empty" id="cartEmpty">
+          <div class="cart-empty-icon">🛒</div>
+          <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">Your cart is empty</div>
+          <div style="font-size:0.82rem;">Browse premium documents and click<br><strong style="color:var(--paid-badge);">Add to Cart</strong> to get started.</div>
+        </div>
+        <div id="cartItemsList"></div>
+      </div>
+
+      <div class="cart-footer" id="cartFooter" style="display:none">
+        <div class="cart-total-row">
+          <span class="cart-total-label">Order Total</span>
+          <span class="cart-total-amount" id="cartTotal">$0.00</span>
+        </div>
+        <div class="cart-form-fields">
+          <input class="cart-input" type="text" id="checkoutName" placeholder="Full Name *" autocomplete="name" oninput="clearCartErr('nameErr')">
+          <div class="cart-field-err" id="nameErr">Please enter your full name.</div>
+          <input class="cart-input" type="email" id="checkoutEmail" placeholder="Email Address * (links sent here)" autocomplete="email" oninput="clearCartErr('emailErr')">
+          <div class="cart-field-err" id="emailErr">Please enter a valid email address.</div>
+        </div>
+        <!-- PayPal renders here -->
+        <div id="paypal-button-container"></div>
+        <div class="cart-pay-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Secure checkout via PayPal · Drive links delivered instantly after payment
+        </div>
       </div>
     </div>
+
+    <!-- Post-payment success view -->
+    <div class="cart-success" id="cartSuccess">
+      <div class="cart-success-header">
+        <div class="cart-success-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Payment Confirmed!</h3>
+        <p>Your documents are unlocked. Links also sent to <strong id="successEmail" style="color:#4ade80;"></strong></p>
+      </div>
+      <div class="cart-success-body">
+        <div class="cart-success-label">Your Purchased Documents</div>
+        <div id="unlockedDocsList"></div>
+        <div class="cart-email-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>A confirmation email with all your download links has been sent to your email address. Check your spam folder if you don't see it within a few minutes.</div>
+        </div>
+        <button onclick="closeCart()" style="width:100%;margin-top:16px;padding:12px;background:var(--teal);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='var(--teal-light)'" onmouseout="this.style.background='var(--teal)'">Close & Continue Browsing</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <!-- SUBSCRIPTION MODAL -->
-<div class="admin-overlay" id="subOverlay" onclick="closeSubOutside(event)" style="align-items:center;justify-content:center;">
-  <div style="background:#fff;border-radius:16px;width:460px;max-width:95vw;overflow:hidden;box-shadow:0 16px 60px rgba(0,0,0,0.3);">
+<div class="sub-overlay" id="subOverlay" onclick="closeSubOutside(event)">
+  <div style="background:#fff;border-radius:16px;width:460px;max-width:95vw;overflow:hidden;box-shadow:0 16px 60px rgba(0,0,0,0.3);animation:reqIn 0.28s cubic-bezier(0.34,1.46,0.64,1)">
     <div style="background:var(--navy);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;">
       <h3 style="color:#fff;font-family:'Playfair Display',serif;font-size:1.15rem;" id="subModalTitle">Subscribe</h3>
       <button style="background:none;border:none;color:#a8c0d6;cursor:pointer;font-size:1.3rem;" onclick="closeSub()">✕</button>
@@ -1153,92 +1115,101 @@
       <p id="subModalDesc" style="font-size:0.9rem;color:var(--gray-700);line-height:1.6;"></p>
       <input class="cart-input" type="text" id="subName" placeholder="Full Name *">
       <input class="cart-input" type="email" id="subEmail" placeholder="Email Address *">
-      <button class="cart-pay-btn" onclick="processSubscription()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        Subscribe &amp; Pay
-      </button>
-      <div class="cart-notice">🔒 Your subscription will activate immediately. You can cancel anytime. Confirmation sent to your email.</div>
+      <button style="background:var(--teal);color:#fff;font-size:0.9rem;font-weight:700;padding:13px;border-radius:8px;border:none;cursor:pointer;transition:background 0.2s;" onclick="processSubscription()">Subscribe &amp; Pay</button>
+      <div style="font-size:0.76rem;color:var(--gray-500);text-align:center;line-height:1.5;">🔒 Confirmation sent to your email. Cancel anytime.</div>
     </div>
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════════
+     REQUEST DOCUMENT MODAL (replaces contact-us links)
+     ══════════════════════════════════════════════════ -->
+<div class="req-overlay" id="reqOverlay" onclick="closeReqOutside(event)">
+  <div class="req-modal">
+    <div class="req-modal-header">
+      <div>
+        <div class="req-modal-eyebrow">Premium Document Request</div>
+        <h3 class="req-modal-title">Request Access</h3>
+      </div>
+      <button class="req-modal-close" onclick="closeReqModal()" aria-label="Close">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="req-modal-body">
+
+      <!-- document name banner -->
+      <div class="req-doc-banner">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        <span id="reqDocName">–</span>
+      </div>
+
+      <p class="req-intro">Fill in your details and we'll send you payment &amp; access instructions for this document within <strong>24 hours</strong>.</p>
+
+      <!-- form -->
+      <div class="req-form" id="reqForm">
+        <div class="req-field">
+          <label class="req-label" for="reqName">Full Name <span class="req-required">*</span></label>
+          <input class="req-input" type="text" id="reqName" placeholder="e.g. Ahmed Al-Rashid" autocomplete="name">
+        </div>
+        <div class="req-field">
+          <label class="req-label" for="reqEmail">Email Address <span class="req-required">*</span></label>
+          <input class="req-input" type="email" id="reqEmail" placeholder="you@company.com" autocomplete="email">
+        </div>
+        <div class="req-field">
+          <label class="req-label" for="reqMessage">Request / Notes <span class="req-optional">(optional)</span></label>
+          <textarea class="req-textarea" id="reqMessage" placeholder="Any specific requirements, project details, or questions…" rows="3"></textarea>
+        </div>
+        <div class="req-error" id="reqError"></div>
+        <div class="req-bottom-row">
+          <div class="req-price-block">
+            <span class="req-price-tag">$5</span>
+            <span class="req-price-note">per doc<br>Pay after confirmation</span>
+          </div>
+          <button class="req-submit-btn" onclick="submitDocRequest()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Request
+          </button>
+        </div>
+      </div>
+
+      <!-- success state -->
+      <div class="req-success" id="reqSuccess" style="display:none">
+        <div class="req-success-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>Request Sent!</h4>
+        <p>Thank you. We'll email you access &amp; payment details for<br><strong id="reqSuccessDoc"></strong><br>within 24 hours.</p>
+        <button class="req-success-close" onclick="closeReqModal()">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- CONSULTANCY SECTION -->
 <div class="consult-band" id="consultancy">
   <div class="consult-inner">
     <div class="section-label" style="color:var(--teal-light)">Expert Services</div>
     <h2 class="section-title" style="color:#fff">Consultancy Services</h2>
-    <p class="section-sub" style="color:#7a9ab8">Our engineering team brings 30+ years of hands-on RO, desalination and wastewater treatment experience. We provide tailored consultancy for system upgradation, performance improvement, and technical problem-solving.</p>
-
+    <p class="section-sub" style="color:#7a9ab8">Our engineering team brings 30+ years of hands-on RO, desalination and wastewater treatment experience.</p>
     <div class="consult-grid">
-
-      <div class="consult-card">
-        <div class="consult-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div class="consult-title">System Upgradation &amp; Modernisation</div>
-        <div class="consult-desc">Assessment and redesign of aging RO systems to improve energy efficiency, recovery rates, and membrane life. We evaluate your existing plant and provide a detailed upgrade roadmap.</div>
-        <a class="consult-link" href="#contact">Enquire Now →</a>
-      </div>
-
-      <div class="consult-card">
-        <div class="consult-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
-        </div>
-        <div class="consult-title">Performance Troubleshooting &amp; Optimisation</div>
-        <div class="consult-desc">Diagnosing flux decline, high salt passage, pressure drops, fouling issues, and chemical dosing inefficiencies. We deliver actionable solutions to restore and enhance system performance.</div>
-        <a class="consult-link" href="#contact">Enquire Now →</a>
-      </div>
-
-      <div class="consult-card">
-        <div class="consult-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <div class="consult-title">Engineering Design &amp; Detail Engineering</div>
-        <div class="consult-desc">Custom P&amp;ID development, GA drawings, hydraulic design, pipe sizing, instrumentation philosophy, and complete engineering packages for new or modified RO and STP plants.</div>
-        <a class="consult-link" href="#contact">Enquire Now →</a>
-      </div>
-
-      <div class="consult-card">
-        <div class="consult-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <div class="consult-title">Remote Technical Support</div>
-        <div class="consult-desc">Online consultancy sessions for plant operators, EPC contractors, and engineers. Get expert guidance on operational issues, system commissioning, and startup support — from anywhere in the world.</div>
-        <a class="consult-link" href="#contact">Enquire Now →</a>
-      </div>
-
-      <div class="consult-card">
-        <div class="consult-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="consult-title">Training &amp; Capacity Building</div>
-        <div class="consult-desc">Structured training programmes for operations teams covering RO fundamentals, chemical treatment, O&amp;M procedures, and performance monitoring. Available online or on-site.</div>
-        <a class="consult-link" href="#contact">Enquire Now →</a>
-      </div>
-
-      <div class="consult-card">
-        <div class="consult-icon">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="consult-title">Project Review &amp; Third-Party Audit</div>
-        <div class="consult-desc">Independent technical review of RO plant designs, tender documents, and vendor submittals. Ensuring compliance with project specifications, international standards, and best engineering practice.</div>
-        <a class="consult-link" href="#contact">Enquire Now →</a>
-      </div>
-
+      <div class="consult-card"><div class="consult-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="consult-title">System Upgradation &amp; Modernisation</div><div class="consult-desc">Assessment and redesign of aging RO systems to improve energy efficiency, recovery rates, and membrane life.</div><a class="consult-link" href="#contact">Enquire Now →</a></div>
+      <div class="consult-card"><div class="consult-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></div><div class="consult-title">Performance Troubleshooting &amp; Optimisation</div><div class="consult-desc">Diagnosing flux decline, high salt passage, pressure drops, fouling issues, and chemical dosing inefficiencies.</div><a class="consult-link" href="#contact">Enquire Now →</a></div>
+      <div class="consult-card"><div class="consult-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="consult-title">Engineering Design &amp; Detail Engineering</div><div class="consult-desc">Custom P&amp;ID development, GA drawings, hydraulic design, and complete engineering packages.</div><a class="consult-link" href="#contact">Enquire Now →</a></div>
+      <div class="consult-card"><div class="consult-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="consult-title">Remote Technical Support</div><div class="consult-desc">Online consultancy sessions for plant operators, EPC contractors, and engineers — from anywhere in the world.</div><a class="consult-link" href="#contact">Enquire Now →</a></div>
+      <div class="consult-card"><div class="consult-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="consult-title">Training &amp; Capacity Building</div><div class="consult-desc">Structured training programmes covering RO fundamentals, chemical treatment, O&amp;M procedures. Online or on-site.</div><a class="consult-link" href="#contact">Enquire Now →</a></div>
+      <div class="consult-card"><div class="consult-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="consult-title">Project Review &amp; Third-Party Audit</div><div class="consult-desc">Independent technical review of RO plant designs, tender documents, and vendor submittals.</div><a class="consult-link" href="#contact">Enquire Now →</a></div>
     </div>
-
     <div class="consult-cta">
       <div class="consult-cta-text">
         <h3>Ready to discuss your project?</h3>
-        <p>Our engineers are available for initial consultations. Whether you need a system overhaul, a second opinion on an existing design, or full engineering support — we're here to help. Reach out and let's talk about your requirements.</p>
+        <p>Our engineers are available for initial consultations. Whether you need a system overhaul, a second opinion, or full engineering support — reach out and let's talk.</p>
       </div>
       <a href="#contact" class="consult-cta-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.55 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6 6l.93-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16a2 2 0 0 1 .19.92z"/></svg>
         Request a Consultation
       </a>
     </div>
-
   </div>
 </div>
 
@@ -1271,7 +1242,7 @@
       <div class="section-label" style="color:var(--teal-light)">Get In Touch</div>
       <h2>Have a question or need a custom document?</h2>
       <p>Reach out for consultancy enquiries, custom engineering packages, or document requests.</p>
-      <div class="contact-detail">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="462f2820290634292223352f21282a2f243427343f6825292b">[email&#160;protected]</a></div>
+      <div class="contact-detail">📧 info@rodesignlibrary.com</div>
       <div class="contact-detail">🌐 rodesignlibrary.com</div>
       <div class="contact-detail">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff0000"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>
@@ -1302,14 +1273,10 @@
   </div>
 </footer>
 
-<!-- ADMIN PANEL -->
-<!-- ADMIN LOGIN OVERLAY -->
+<!-- ADMIN LOGIN -->
 <div class="admin-login-overlay" id="adminLoginOverlay">
   <div class="admin-login-box">
-    <div class="admin-login-header">
-      <h3>🔒 Admin Login</h3>
-      <button class="admin-login-close" onclick="closeAdminLogin()">✕</button>
-    </div>
+    <div class="admin-login-header"><h3>🔒 Admin Login</h3><button class="admin-login-close" onclick="closeAdminLogin()">✕</button></div>
     <div class="admin-login-body">
       <div class="admin-login-err" id="adminLoginErr">Incorrect password. Please try again.</div>
       <label style="font-size:0.82rem;font-weight:600;color:var(--gray-700);margin-bottom:4px;display:block;">Admin Password</label>
@@ -1319,109 +1286,51 @@
   </div>
 </div>
 
+<!-- ADMIN PANEL -->
 <div class="admin-overlay" id="adminOverlay" onclick="closeAdminOutside(event)">
   <div class="admin-panel" id="adminPanel">
-    <div class="admin-header">
-      <h3>⚙ Admin Panel</h3>
-      <button class="admin-close" onclick="closeAdmin()">✕</button>
-    </div>
+    <div class="admin-header"><h3>⚙ Admin Panel</h3><button class="admin-close" onclick="closeAdmin()">✕</button></div>
     <div class="admin-body">
-
-      <!-- GALLERY IMAGES -->
       <div class="admin-section-title">Hero Gallery Images</div>
-      <p style="font-size:0.78rem;color:var(--gray-500);margin-bottom:10px;">Recommended: <strong>420 × 520 px</strong> — JPG or PNG. Images cycle every 10 seconds with blur crossfade.</p>
+      <p style="font-size:0.78rem;color:var(--gray-500);margin-bottom:10px;">Recommended: <strong>420 × 520 px</strong> — JPG or PNG.</p>
       <div class="gallery-upload-zone" id="galleryUploadZone">
         <input type="file" id="galleryFileInput" accept="image/*" multiple onchange="handleGalleryUpload(this)">
         <div style="font-size:1.6rem;margin-bottom:6px;opacity:0.5;">🖼</div>
         <div style="font-size:0.82rem;font-weight:600;color:var(--gray-500);">Click or drag images here</div>
         <div class="gallery-upload-hint">Max 5 MB per image · JPG, PNG, WebP</div>
       </div>
-      <div class="gallery-grid" id="adminGalleryGrid"></div>
-      <br>
-      <!-- CHANGE PASSWORD -->
+      <div class="gallery-grid" id="adminGalleryGrid"></div><br>
       <div class="admin-section-title">Change Admin Password</div>
       <div class="admin-pw-row">
         <input class="admin-input" type="password" id="adminNewPw" placeholder="New password">
         <input class="admin-input" type="password" id="adminConfirmPw" placeholder="Confirm password">
       </div>
       <button class="admin-submit" onclick="changeAdminPw()">Update Password</button>
-      <div class="admin-msg" id="adminPwMsg"></div>
-      <br>
-      <!-- ADD DOCUMENT FORM -->
+      <div class="admin-msg" id="adminPwMsg"></div><br>
       <div class="admin-section-title">Add Document / Training Manual</div>
       <div class="admin-form">
-        <div>
-          <label>Document Title *</label>
-          <input class="admin-input" id="doc-title" type="text" placeholder="e.g. RO System Training Manual v2">
-        </div>
-        <div>
-          <label>Description</label>
-          <textarea class="admin-textarea" id="doc-desc" placeholder="Brief description of the document…"></textarea>
-        </div>
+        <div><label>Document Title *</label><input class="admin-input" id="doc-title" type="text" placeholder="e.g. RO System Training Manual v2"></div>
+        <div><label>Description</label><textarea class="admin-textarea" id="doc-desc" placeholder="Brief description…"></textarea></div>
         <div class="admin-row">
-          <div>
-            <label>Category</label>
-            <select class="admin-select" id="doc-cat">
-              <option value="Service Manual">Service Manual</option>
-              <option value="Training Manual">Training Manual</option>
-              <option value="O&M Manual">O&M Manual</option>
-              <option value="Design Engineering">Design Engineering</option>
-              <option value="Project Submittal">Project Submittal</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div>
-            <label>Access Type</label>
-            <select class="admin-select" id="doc-access">
-              <option value="free">🟢 Free</option>
-              <option value="paid">🔴 Paid / Premium</option>
-            </select>
-          </div>
+          <div><label>Category</label><select class="admin-select" id="doc-cat"><option value="Service Manual">Service Manual</option><option value="Training Manual">Training Manual</option><option value="O&M Manual">O&M Manual</option><option value="Design Engineering">Design Engineering</option><option value="Project Submittal">Project Submittal</option><option value="Other">Other</option></select></div>
+          <div><label>Access Type</label><select class="admin-select" id="doc-access"><option value="free">🟢 Free</option><option value="paid">🔴 Paid / Premium</option></select></div>
         </div>
-        <div>
-          <label>Google Drive / Document Link *</label>
-          <input class="admin-input" id="doc-link" type="url" placeholder="https://drive.google.com/file/…">
-          <div class="link-hint">Paste your Google Drive share link or any external URL. Visitors will be directed here.</div>
-        </div>
+        <div><label>Google Drive / Document Link *</label><input class="admin-input" id="doc-link" type="url" placeholder="https://drive.google.com/file/…"><div class="link-hint">Paste Google Drive link or any URL.</div></div>
         <div class="admin-row">
-          <div>
-            <label>Library Section</label>
-            <select class="admin-select" id="doc-section">
-              <option value="docs">Design &amp; Training Documents</option>
-              <option value="drawings">Design Drawings Library</option>
-            </select>
-          </div>
-          <div>
-            <label>Price (if paid, optional)</label>
-            <input class="admin-input" id="doc-price" type="text" placeholder="e.g. $49">
-          </div>
+          <div><label>Library Section</label><select class="admin-select" id="doc-section"><option value="docs">Design &amp; Training Documents</option><option value="drawings">Design Drawings Library</option></select></div>
+          <div><label>Price (if paid)</label><input class="admin-input" id="doc-price" type="text" placeholder="e.g. $49"></div>
         </div>
         <button class="admin-submit" onclick="addDocument()">+ Add to Library</button>
       </div>
-
-      <!-- ADD SOFTWARE TOOL FORM -->
       <div class="admin-section-title">Add Software Tool</div>
       <div class="admin-form">
-        <div>
-          <label>Tool Name *</label>
-          <input class="admin-input" id="sw-name" type="text" placeholder="e.g. MMF Design Calculator">
-        </div>
-        <div>
-          <label>Description</label>
-          <textarea class="admin-textarea" id="sw-desc" placeholder="What does this tool do?"></textarea>
-        </div>
-        <div>
-          <label>Tool URL *</label>
-          <input class="admin-input" id="sw-link" type="url" placeholder="https://…">
-        </div>
+        <div><label>Tool Name *</label><input class="admin-input" id="sw-name" type="text" placeholder="e.g. MMF Design Calculator"></div>
+        <div><label>Description</label><textarea class="admin-textarea" id="sw-desc" placeholder="What does this tool do?"></textarea></div>
+        <div><label>Tool URL *</label><input class="admin-input" id="sw-link" type="url" placeholder="https://…"></div>
         <button class="admin-submit" onclick="addSoftware()">+ Add Software Tool</button>
       </div>
-
-      <!-- EXISTING DOCUMENTS LIST -->
       <div class="admin-section-title">Manage Documents</div>
-      <div class="admin-list" id="admin-doc-list"></div>
-
-      <br>
+      <div class="admin-list" id="admin-doc-list"></div><br>
       <div class="admin-section-title">Manage Software Tools</div>
       <div class="admin-list" id="admin-sw-list"></div>
     </div>
@@ -1429,103 +1338,93 @@
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast">✓ Changes saved successfully</div>
+<div class="toast" id="toast">✓ Done</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ─── DATA STORE ─────────────────────────────────────────────────────────────
-let data = {
-  docs: [],
-  drawings: [],
-  software: []
-};
+<script>
+// ─── DATA STORE ──────────────────────────────────────────────────────────────
+let data = { docs: [], drawings: [], software: [] };
 
-// ─── SEED DATA ───────────────────────────────────────────────────────────────
 const seedDocs = [
-  // ── SERVICE MANUALS & GUIDELINES ──
-  { id:1,  title:"Service Manual & Guidelines – RO System",        desc:"Ready-to-use service manual covering operation, preventive maintenance, troubleshooting, and log sheets for RO plants.",                                                                         category:"Service Manual",    access:"free", link:"https://rodesignlibrary.com/service-manual/",    price:"", section:"docs" },
-  { id:2,  title:"Training Manual – RO System",                    desc:"Comprehensive training manual covering RO principles, operation procedures, membrane chemistry, and troubleshooting for plant operators and engineers.",                                             category:"Training Manual",   access:"free", link:"https://rodesignlibrary.com/manual/",            price:"", section:"docs" },
-  { id:3,  title:"Design – Seawater Intake System",                desc:"Design guide for seawater intake systems including civil, mechanical, and electrical components for SWRO plants.",                                                                                  category:"Design Engineering",access:"free", link:"https://rodesignlibrary.com/design-seawater/",   price:"", section:"docs" },
-  { id:4,  title:"Design Engineering – SWRO 1000 m³/day",         desc:"Complete design engineering package for a 1000 m³/day seawater RO system including P&IDs, calculations, and datasheets.",                                                                          category:"Design Engineering",access:"free", link:"https://rodesignlibrary.com/design-engg/",       price:"", section:"docs" },
-  // ── PAID / ON REQUEST ──
-  { id:5,  title:"O&M Manual – Editable – Reverse Osmosis",        desc:"Fully editable O&M manual for RO systems. Covers daily checks, chemical handling, membrane cleaning, CIP procedures, and performance monitoring.",                                                 category:"O&M Manual",        access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=O%26M+Manual+Editable+Reverse+osmosis", price:"", section:"docs" },
-  { id:6,  title:"O&M Manual – Editable – STP MBBR",              desc:"Editable O&M manual for STP MBBR plants. Covers process descriptions, operational procedures, preventive maintenance, and troubleshooting.",                                                        category:"O&M Manual",        access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=O%26M+Manual+Editable+STP+MBBR",          price:"", section:"docs" },
-  { id:7,  title:"O&M Manual – Editable – MBBR",                  desc:"Editable operations and maintenance manual for Moving Bed Biofilm Reactor (MBBR) systems.",                                                                                                         category:"O&M Manual",        access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=O%26M+Manual+Editable+MBBR",               price:"", section:"docs" },
-  { id:8,  title:"Sample Copy – Project Submittal",                desc:"Standard project submittal template covering all typical deliverable formats for EPC contractors and project owners.",                                                                               category:"Project Submittal", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=Sample+copy+Project+Submittal",            price:"", section:"docs" },
-  { id:9,  title:"Sample Copy – Inspection Request",               desc:"Standard inspection request form template for use during fabrication and site installation phases.",                                                                                                 category:"Project Submittal", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=Sample+copy+Inspection+Request",           price:"", section:"docs" },
-  { id:10, title:"Sample Copy – QC Checklist",                     desc:"Quality control checklist template for RO and water treatment plant commissioning and handover documentation.",                                                                                     category:"Project Submittal", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=Sample+copy+QC",                           price:"", section:"docs" },
-];
-const seedDrawings = [
-  // ── BWRO (Brackish Water RO) ──
-  { id:101, title:"11 m³/day BWRO – 1500 ppm Equipment Layout",          desc:"Equipment layout drawing for 11 m³/day brackish water RO system at 1500 ppm feed TDS.",                                                  category:"BWRO System", access:"free", link:"https://rodesignlibrary.com/11m3-equipment-layout/",                                              price:"", section:"drawings" },
-  { id:102, title:"15 m³/day BWRO – 4000 ppm Layout, P&ID, Skid",        desc:"Layout, P&ID and skid drawing package for 15 m³/day BWRO system at 4000 ppm.",                                                             category:"BWRO System", access:"free", link:"https://rodesignlibrary.com/pid-skid/",                                                          price:"", section:"drawings" },
-  { id:103, title:"20 m³/day BWRO – 10000 ppm Containerized",             desc:"Containerized 20 m³/day brackish water RO system at 10000 ppm including layout and P&ID.",                                                category:"BWRO System", access:"free", link:"https://rodesignlibrary.com/20m3-day-bwro-10000ppm/",                                             price:"", section:"drawings" },
-  { id:104, title:"24 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawings for 24 m³/day BWRO system at 45000 ppm.",                                                                   category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=24m3+day+BWRO+45000ppm+layout+PID+skid",          price:"", section:"drawings" },
-  { id:105, title:"38 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Engineering drawing set for 38 m³/day BWRO plant at 45000 ppm feed TDS.",                                                                  category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=38m3+day+BWRO+45000ppm+layout+PID+skid",          price:"", section:"drawings" },
-  { id:106, title:"45 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Full drawing set for 45 m³/day BWRO system at 45000 ppm.",                                                                                  category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=45m3+day+BWRO+45000ppm+layout+PID+skid",          price:"", section:"drawings" },
-  { id:107, title:"57 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawing package for 57 m³/day BWRO system.",                                                                          category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=57m3+day+BWRO+45000ppm+layout+PID+skid",          price:"", section:"drawings" },
-  { id:108, title:"75 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Engineering drawings for 75 m³/day brackish water RO plant at 45000 ppm.",                                                                 category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=75m3+day+BWRO+45000ppm+layout+PID+skid",          price:"", section:"drawings" },
-  { id:109, title:"100 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawing package for 100 m³/day BWRO: layout, P&ID, fabrication drawings, and control panel.",                                    category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=100m3+day+BWRO+layout+PID+Fab+control+panel",      price:"", section:"drawings" },
-  { id:110, title:"115 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full engineering drawing set for 115 m³/day BWRO system.",                                                                                  category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=115m3+day+BWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:111, title:"200 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete design drawing package for 200 m³/day brackish water RO plant.",                                                                   category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=200m3+day+BWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:112, title:"300 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full drawing package for 300 m³/day BWRO system suitable for EPC submission.",                                                              category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=300m3+day+BWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:113, title:"500 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Engineering drawing set for 500 m³/day BWRO plant.",                                                                                         category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=500m3+day+BWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:114, title:"750 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawings for 750 m³/day brackish water RO system.",                                                                                 category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=750m3+day+BWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:115, title:"1000 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering drawing package for 1000 m³/day BWRO plant.",                                                                              category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=1000m3+day+BWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:116, title:"1200 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Engineering drawings for 1200 m³/day BWRO system.",                                                                                         category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=1200m3+day+BWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:117, title:"1500 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Complete drawing set for 1500 m³/day BWRO plant.",                                                                                          category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=1500m3+day+BWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:118, title:"2000 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering package for 2000 m³/day brackish water RO system.",                                                                        category:"BWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=2000m3+day+BWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  // ── SWRO (Seawater RO) ──
-  { id:201, title:"5 m³/day SWRO – 45000 ppm Containerized",             desc:"Containerized seawater RO unit at 45000 ppm — layout and P&ID drawings included.",                                                          category:"SWRO System", access:"free", link:"https://rodesignlibrary.com/5m3-containerized/",                                                price:"", section:"drawings" },
-  { id:202, title:"20 m³/day SWRO – 45000 ppm Containerized",            desc:"20 m³/day containerized SWRO system drawings at 45000 ppm feed TDS.",                                                                       category:"SWRO System", access:"free", link:"https://rodesignlibrary.com/20m3-day-swro-45000/",                                                price:"", section:"drawings" },
-  { id:203, title:"11 m³/day SWRO – 45000 ppm Equipment Layout",         desc:"Equipment layout drawing for 11 m³/day seawater RO system.",                                                                                 category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=11m3+day+SWRO+45000ppm+Equipment+Layout",           price:"", section:"drawings" },
-  { id:204, title:"15 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawings for 15 m³/day SWRO system at 45000 ppm.",                                                                   category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=15m3+day+SWRO+450000ppm+layout+PID+skid",         price:"", section:"drawings" },
-  { id:205, title:"24 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Full drawing set for 24 m³/day seawater RO at 45000 ppm.",                                                                                  category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=24m3+day+SWRO+45000ppm+layout+PID+skid",           price:"", section:"drawings" },
-  { id:206, title:"38 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Engineering drawing package for 38 m³/day SWRO system.",                                                                                    category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=38m3+day+SWRO+45000ppm+layout+PID+skid",           price:"", section:"drawings" },
-  { id:207, title:"45 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Complete drawings for 45 m³/day seawater RO plant.",                                                                                        category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=45m3+day+SWRO+45000ppm+layout+PID+skid",           price:"", section:"drawings" },
-  { id:208, title:"57 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Drawing set for 57 m³/day SWRO system at 45000 ppm.",                                                                                       category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=57m3+day+SWRO+45000ppm+layout+PID+skid",           price:"", section:"drawings" },
-  { id:209, title:"75 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawings for 75 m³/day SWRO system.",                                                                                 category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=75m3+day+SWRO+45000ppm+layout+PID+skid",           price:"", section:"drawings" },
-  { id:210, title:"100 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full engineering drawing package for 100 m³/day seawater RO system.",                                                                       category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=100m3+day+SWRO+layout+PID+Fab+control+panel",      price:"", section:"drawings" },
-  { id:211, title:"115 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawing set for 115 m³/day SWRO plant.",                                                                                           category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=115m3+day+SWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:212, title:"150 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Engineering drawings for 150 m³/day seawater RO system.",                                                                                   category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=150m3+day+SWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:213, title:"200 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete package for 200 m³/day SWRO plant.",                                                                                               category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=200m3+day+SWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:214, title:"300 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full drawing set for 300 m³/day seawater RO system.",                                                                                       category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=300m3+day+SWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:215, title:"500 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Engineering drawing package for 500 m³/day SWRO plant.",                                                                                    category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=500m3+day+SWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:216, title:"750 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawings for 750 m³/day seawater RO system.",                                                                                      category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=750m3+day+SWRO+layout+PID+Fab+control+panel",     price:"", section:"drawings" },
-  { id:217, title:"1000 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering package for 1000 m³/day SWRO plant.",                                                                                      category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=1000m3+day+SWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:218, title:"1200 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Engineering drawings for 1200 m³/day seawater RO system.",                                                                                  category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=1200m3+day+SWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:219, title:"1500 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Complete drawing set for 1500 m³/day SWRO plant.",                                                                                          category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=1500m3+day+SWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:220, title:"2000 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering package for 2000 m³/day seawater RO plant.",                                                                               category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=2000m3+day+SWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  { id:221, title:"3000 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Complete engineering drawing package for 3000 m³/day SWRO system.",                                                                         category:"SWRO System", access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=3000m3+day+SWRO+layout+PID+Fab+control+panel",    price:"", section:"drawings" },
-  // ── STP (Sewage Treatment Plants) ──
-  { id:301, title:"5 m³/day STP – Extended Aeration",                     desc:"Engineering drawings for 5 m³/day sewage treatment plant using extended aeration process.",                                                 category:"STP Plant",   access:"free", link:"https://rodesignlibrary.com/stp-areation/",                                                    price:"", section:"drawings" },
-  { id:302, title:"20 m³/day STP – MBBR",                                  desc:"Full drawing set for 20 m³/day STP using Moving Bed Biofilm Reactor (MBBR) process.",                                                      category:"STP Plant",   access:"free", link:"https://rodesignlibrary.com/stp-mbbr/",                                                        price:"", section:"drawings" },
-  { id:303, title:"35 m³/day STP – SAFF",                                  desc:"Engineering drawings for 35 m³/day STP using Submerged Aeration Fixed Film (SAFF) process.",                                               category:"STP Plant",   access:"free", link:"https://rodesignlibrary.com/35m3-day-stp-saff/",                                                   price:"", section:"drawings" },
-  { id:304, title:"50 m³/day STP – MBBR",                                  desc:"Complete drawing package for 50 m³/day MBBR sewage treatment plant.",                                                                       category:"STP Plant",   access:"free", link:"https://rodesignlibrary.com/50m3-day-stp-mbbr/",                                                   price:"", section:"drawings" },
-  { id:305, title:"100 m³/day STP – MBBR",                                 desc:"Full engineering drawings for 100 m³/day MBBR sewage treatment plant.",                                                                     category:"STP Plant",   access:"free", link:"https://rodesignlibrary.com/100m3-day-stp-mbbr/",                                                  price:"", section:"drawings" },
-  { id:306, title:"150 m³/day STP – MBBR",                                 desc:"Layout, P&ID, fabrication and control panel drawings for 150 m³/day MBBR STP.",                                                            category:"STP Plant",   access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=150+m3+day+STP+MBBR",                            price:"", section:"drawings" },
-  { id:307, title:"200 m³/day STP – MBBR",                                 desc:"Complete drawing package for 200 m³/day MBBR sewage treatment plant.",                                                                      category:"STP Plant",   access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=200+m3+day+STP+MBBR",                            price:"", section:"drawings" },
-  { id:308, title:"250 m³/day STP – MBBR",                                 desc:"Engineering drawings for 250 m³/day MBBR STP system.",                                                                                      category:"STP Plant",   access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=250+m3+day+STP+MBBR",                            price:"", section:"drawings" },
-  { id:309, title:"300 m³/day STP – MBBR",                                 desc:"Full drawing set for 300 m³/day MBBR sewage treatment plant.",                                                                               category:"STP Plant",   access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=300+m3+day+STP+MBBR",                            price:"", section:"drawings" },
-  { id:310, title:"500 m³/day STP – MBBR",                                 desc:"Complete engineering drawing package for 500 m³/day MBBR STP.",                                                                             category:"STP Plant",   access:"paid", link:"https://rodesignlibrary.com/contact-us/?request=500+m3+day+STP+MBBR",                            price:"", section:"drawings" },
-  // ── MULTIMEDIA FILTER ──
-  { id:401, title:"Horizontal Multimedia Filter – Drawing Set",            desc:"Full engineering drawing set for horizontal multimedia filter (MMF) including GA, P&ID, and fabrication drawings.",                          category:"Media Filter",access:"free", link:"https://rodesignlibrary.com/horizontal-mmf/",                                                  price:"", section:"drawings" },
-  { id:402, title:"Vertical Multimedia Filter – Drawing Set",              desc:"Complete drawing package for vertical multimedia filter with dimensions, nozzle layout, and P&ID.",                                          category:"Media Filter",access:"free", link:"https://rodesignlibrary.com/vertical-mmf/",                                                    price:"", section:"drawings" },
-];
-const seedSoftware = [
-  { id: 20, name: "MMF / Filter Media Calculator", desc: "Determines filter media type and quantity using flow rate, water quality, and velocity inputs.", link: "https://mmfmedia.site/" },
-  { id: 21, name: "UF System Cost Calculator", desc: "Estimates total UF system cost based on flow rate, feed quality, recovery, and configuration.", link: "https://mmfmedia.site/#/uf" },
-  { id: 22, name: "Chemical Dose Rate Calculator", desc: "Calculates required chemical dosing rate from flow rate, target dose, and concentration.", link: "https://mmfmedia.site/#/chemicaldosing" },
-  { id: 23, name: "RO O&M Cost Calculator", desc: "Estimates operating and maintenance cost based on flow, power, membrane life, and chemical usage.", link: "https://mmfmedia.site/#/O%26MCost" },
-  { id: 24, name: "High Pressure Pipe Calculator", desc: "Sizing tool for high pressure pipe design in RO systems.", link: "https://rodesignlibrary-bot.github.io/" },
-  { id: 25, name: "Low Pressure Pipe Calculator", desc: "Pipe sizing for low pressure lines in RO and STP plant pre-treatment and permeate systems.", link: "https://rodesignlibrary-bot.github.io/llp/" },
+  { id:1,  title:"Service Manual & Guidelines – RO System",        desc:"Ready-to-use service manual covering operation, preventive maintenance, troubleshooting, and log sheets for RO plants.",                                                                         category:"Service Manual",    access:"free", link:"https://drive.google.com/file/d/1GRHw98blBje7hL9Jle3NbuRNiCvMzZwN/view?usp=sharing", price:"", section:"docs" },
+  { id:2,  title:"Training Manual – RO System",                    desc:"Comprehensive training manual covering RO principles, operation procedures, membrane chemistry, and troubleshooting.",                                                                               category:"Training Manual",   access:"free", link:"https://drive.google.com/file/d/14pSzbK0DRGdoM2CwHpOuL9yUJaulew9p/view?usp=sharing", price:"", section:"docs" },
+  { id:3,  title:"Design – Seawater Intake System",                desc:"Design guide for seawater intake systems including civil, mechanical, and electrical components for SWRO plants.",                                                                                  category:"Design Engineering",access:"free", link:"https://drive.google.com/file/d/11ycSNuWgdEGR1cBwxS1vNj7TMvUZ3rTk/view?usp=sharing", price:"", section:"docs" },
+  { id:4,  title:"Design Engineering – SWRO 1000 m³/day",         desc:"Complete design engineering package for a 1000 m³/day seawater RO system including P&IDs, calculations, and datasheets.",                                                                          category:"Design Engineering",access:"free", link:"https://drive.google.com/file/d/1Gg4O5a0fNuCdFj04KakjEnO1WBNosfGm/view?usp=sharing", price:"", section:"docs" },
+  { id:5,  title:"O&M Manual – Editable – Reverse Osmosis",        desc:"Fully editable O&M manual for RO systems. Covers daily checks, chemical handling, membrane cleaning, CIP procedures, and performance monitoring.",                                                 category:"O&M Manual",        access:"paid", link:"#", price:"", section:"docs" },
+  { id:6,  title:"O&M Manual – Editable – STP MBBR",              desc:"Editable O&M manual for STP MBBR plants. Covers process descriptions, operational procedures, preventive maintenance, and troubleshooting.",                                                        category:"O&M Manual",        access:"paid", link:"#", price:"", section:"docs" },
+  { id:7,  title:"O&M Manual – Editable – MBBR",                  desc:"Editable operations and maintenance manual for Moving Bed Biofilm Reactor (MBBR) systems.",                                                                                                         category:"O&M Manual",        access:"paid", link:"#", price:"", section:"docs" },
+  { id:8,  title:"Sample Copy – Project Submittal",                desc:"Standard project submittal template covering all typical deliverable formats for EPC contractors and project owners.",                                                                               category:"Project Submittal", access:"paid", link:"#", price:"", section:"docs" },
+  { id:9,  title:"Sample Copy – Inspection Request",               desc:"Standard inspection request form template for use during fabrication and site installation phases.",                                                                                                 category:"Project Submittal", access:"paid", link:"#", price:"", section:"docs" },
+  { id:10, title:"Sample Copy – QC Checklist",                     desc:"Quality control checklist template for RO and water treatment plant commissioning and handover documentation.",                                                                                     category:"Project Submittal", access:"paid", link:"#", price:"", section:"docs" },
 ];
 
-// ─── INIT ────────────────────────────────────────────────────────────────────
+const seedDrawings = [
+  { id:101, title:"11 m³/day BWRO – 1500 ppm Equipment Layout",          desc:"Equipment layout drawing for 11 m³/day brackish water RO system at 1500 ppm feed TDS.",          category:"BWRO System", access:"free", link:"https://drive.google.com/file/d/1bDizyE6BtaJgmP8kX6mMW678JGr2W3ay/view?usp=sharing", price:"", section:"drawings" },
+  { id:102, title:"15 m³/day BWRO – 4000 ppm Layout, P&ID, Skid",        desc:"Layout, P&ID and skid drawing package for 15 m³/day BWRO system at 4000 ppm.",                    category:"BWRO System", access:"free", link:"https://drive.google.com/file/d/1hZ7Fc59UjgXraZ-yiM1uOfidtDcyYZfK/view?usp=sharing", price:"", section:"drawings" },
+  { id:103, title:"20 m³/day BWRO – 10000 ppm Containerized",             desc:"Containerized 20 m³/day brackish water RO system at 10000 ppm including layout and P&ID.",        category:"BWRO System", access:"free", link:"https://drive.google.com/file/d/1_Uq0Htzrvp7DrG2g10SaVY9gS6v5KRI-/view?usp=sharing", price:"", section:"drawings" },
+  { id:104, title:"24 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawings for 24 m³/day BWRO system at 45000 ppm.",                          category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:105, title:"38 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Engineering drawing set for 38 m³/day BWRO plant at 45000 ppm feed TDS.",                         category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:106, title:"45 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Full drawing set for 45 m³/day BWRO system at 45000 ppm.",                                         category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:107, title:"57 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawing package for 57 m³/day BWRO system.",                                 category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:108, title:"75 m³/day BWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Engineering drawings for 75 m³/day brackish water RO plant at 45000 ppm.",                        category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:109, title:"100 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawing package for 100 m³/day BWRO: layout, P&ID, fabrication, and control panel.",    category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:110, title:"115 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full engineering drawing set for 115 m³/day BWRO system.",                                         category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:111, title:"200 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete design drawing package for 200 m³/day brackish water RO plant.",                         category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:112, title:"300 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full drawing package for 300 m³/day BWRO system suitable for EPC submission.",                    category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:113, title:"500 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Engineering drawing set for 500 m³/day BWRO plant.",                                               category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:114, title:"750 m³/day BWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawings for 750 m³/day brackish water RO system.",                                       category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:115, title:"1000 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering drawing package for 1000 m³/day BWRO plant.",                                    category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:116, title:"1200 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Engineering drawings for 1200 m³/day BWRO system.",                                               category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:117, title:"1500 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Complete drawing set for 1500 m³/day BWRO plant.",                                                 category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:118, title:"2000 m³/day BWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering package for 2000 m³/day brackish water RO system.",                              category:"BWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:201, title:"5 m³/day SWRO – 45000 ppm Containerized",             desc:"Containerized seawater RO unit at 45000 ppm — layout and P&ID drawings included.",               category:"SWRO System", access:"free", link:"https://drive.google.com/file/d/1QwD-OvKyYBTb50gOBucMf6NSgoesqlPo/view?usp=sharing", price:"", section:"drawings" },
+  { id:202, title:"20 m³/day SWRO – 45000 ppm Containerized",            desc:"20 m³/day containerized SWRO system drawings at 45000 ppm feed TDS.",                             category:"SWRO System", access:"free", link:"https://drive.google.com/file/d/1Q8HugUCmICkHkeAYJ61Jv35fRe_PY-hh/view?usp=sharing", price:"", section:"drawings" },
+  { id:203, title:"11 m³/day SWRO – 45000 ppm Equipment Layout",         desc:"Equipment layout drawing for 11 m³/day seawater RO system.",                                       category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:204, title:"15 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawings for 15 m³/day SWRO system at 45000 ppm.",                          category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:205, title:"24 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Full drawing set for 24 m³/day seawater RO at 45000 ppm.",                                        category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:206, title:"38 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Engineering drawing package for 38 m³/day SWRO system.",                                          category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:207, title:"45 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Complete drawings for 45 m³/day seawater RO plant.",                                              category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:208, title:"57 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Drawing set for 57 m³/day SWRO system at 45000 ppm.",                                             category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:209, title:"75 m³/day SWRO – 45000 ppm Layout, P&ID, Skid",       desc:"Layout, P&ID and skid drawings for 75 m³/day SWRO system.",                                       category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:210, title:"100 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full engineering drawing package for 100 m³/day seawater RO system.",                            category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:211, title:"115 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawing set for 115 m³/day SWRO plant.",                                                 category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:212, title:"150 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Engineering drawings for 150 m³/day seawater RO system.",                                         category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:213, title:"200 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete package for 200 m³/day SWRO plant.",                                                     category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:214, title:"300 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Full drawing set for 300 m³/day seawater RO system.",                                             category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:215, title:"500 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Engineering drawing package for 500 m³/day SWRO plant.",                                          category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:216, title:"750 m³/day SWRO – Layout, P&ID, Fab, Control Panel",  desc:"Complete drawings for 750 m³/day seawater RO system.",                                            category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:217, title:"1000 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering package for 1000 m³/day SWRO plant.",                                            category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:218, title:"1200 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Engineering drawings for 1200 m³/day seawater RO system.",                                        category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:219, title:"1500 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Complete drawing set for 1500 m³/day SWRO plant.",                                                category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:220, title:"2000 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Full engineering package for 2000 m³/day seawater RO plant.",                                    category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:221, title:"3000 m³/day SWRO – Layout, P&ID, Fab, Control Panel", desc:"Complete engineering drawing package for 3000 m³/day SWRO system.",                              category:"SWRO System", access:"paid", link:"#", price:"", section:"drawings" },
+  { id:301, title:"5 m³/day STP – Extended Aeration",                     desc:"Engineering drawings for 5 m³/day sewage treatment plant using extended aeration process.",       category:"STP Plant",   access:"free", link:"https://drive.google.com/file/d/1z3uLraboQof8O7zavM5pdIfHLvbhJXV5/view?usp=sharing", price:"", section:"drawings" },
+  { id:302, title:"20 m³/day STP – MBBR",                                  desc:"Full drawing set for 20 m³/day STP using Moving Bed Biofilm Reactor (MBBR) process.",            category:"STP Plant",   access:"free", link:"https://drive.google.com/file/d/17kzd8D743Qw1v8gNLg3xW34yISUK5kqU/view?usp=sharing", price:"", section:"drawings" },
+  { id:303, title:"35 m³/day STP – SAFF",                                  desc:"Engineering drawings for 35 m³/day STP using Submerged Aeration Fixed Film (SAFF) process.",    category:"STP Plant",   access:"free", link:"https://drive.google.com/file/d/1EJk1ZbpQDmyvq97fRm_Jdv2EiSDdF0LK/view?usp=sharing", price:"", section:"drawings" },
+  { id:304, title:"50 m³/day STP – MBBR",                                  desc:"Complete drawing package for 50 m³/day MBBR sewage treatment plant.",                            category:"STP Plant",   access:"free", link:"https://drive.google.com/file/d/17uwPc59_S5jGZgzTeH_Q4leqlpbHVL4D/view?usp=sharing", price:"", section:"drawings" },
+  { id:305, title:"100 m³/day STP – MBBR",                                 desc:"Full engineering drawings for 100 m³/day MBBR sewage treatment plant.",                          category:"STP Plant",   access:"free", link:"https://drive.google.com/file/d/1AiSKNx20RJ6eH-MaOvhZymOAhHZcqgoR/view?usp=sharing", price:"", section:"drawings" },
+  { id:306, title:"150 m³/day STP – MBBR",                                 desc:"Layout, P&ID, fabrication and control panel drawings for 150 m³/day MBBR STP.",                  category:"STP Plant",   access:"paid", link:"#", price:"", section:"drawings" },
+  { id:307, title:"200 m³/day STP – MBBR",                                 desc:"Complete drawing package for 200 m³/day MBBR sewage treatment plant.",                           category:"STP Plant",   access:"paid", link:"#", price:"", section:"drawings" },
+  { id:308, title:"250 m³/day STP – MBBR",                                 desc:"Engineering drawings for 250 m³/day MBBR STP system.",                                           category:"STP Plant",   access:"paid", link:"#", price:"", section:"drawings" },
+  { id:309, title:"300 m³/day STP – MBBR",                                 desc:"Full drawing set for 300 m³/day MBBR sewage treatment plant.",                                   category:"STP Plant",   access:"paid", link:"#", price:"", section:"drawings" },
+  { id:310, title:"500 m³/day STP – MBBR",                                 desc:"Complete engineering drawing package for 500 m³/day MBBR STP.",                                  category:"STP Plant",   access:"paid", link:"#", price:"", section:"drawings" },
+  { id:401, title:"Horizontal Multimedia Filter – Drawing Set",            desc:"Full engineering drawing set for horizontal multimedia filter (MMF) including GA, P&ID, and fabrication drawings.", category:"Media Filter", access:"free", link:"https://drive.google.com/file/d/13edh1ULFAD4ol-i6hPvBfqCYbctwiImK/view?usp=sharing", price:"", section:"drawings" },
+  { id:402, title:"Vertical Multimedia Filter – Drawing Set",              desc:"Complete drawing package for vertical multimedia filter with dimensions, nozzle layout, and P&ID.", category:"Media Filter", access:"free", link:"https://drive.google.com/file/d/13N5ZjYaF49MDM7gPrb-MSTVTwiLU0zm5/view?usp=sharing", price:"", section:"drawings" },
+];
+
+const seedSoftware = [
+  { id:20, name:"MMF / Filter Media Calculator",    desc:"Determines filter media type and quantity using flow rate, water quality, and velocity inputs.", link:"https://mmfmedia.site/" },
+  { id:21, name:"UF System Cost Calculator",        desc:"Estimates total UF system cost based on flow rate, feed quality, recovery, and configuration.", link:"https://mmfmedia.site/#/uf" },
+  { id:22, name:"Chemical Dose Rate Calculator",    desc:"Calculates required chemical dosing rate from flow rate, target dose, and concentration.", link:"https://mmfmedia.site/#/chemicaldosing" },
+  { id:23, name:"RO O&M Cost Calculator",           desc:"Estimates operating and maintenance cost based on flow, power, membrane life, and chemical usage.", link:"https://mmfmedia.site/#/O%26MCost" },
+  { id:24, name:"High Pressure Pipe Calculator",    desc:"Sizing tool for high pressure pipe design in RO systems.", link:"https://rodesignlibrary-bot.github.io/" },
+  { id:25, name:"Low Pressure Pipe Calculator",     desc:"Pipe sizing for low pressure lines in RO and STP plant pre-treatment and permeate systems.", link:"https://rodesignlibrary-bot.github.io/llp/" },
+];
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
 function init() {
-  const saved = localStorage.getItem('rolib_data');
+  const saved = localStorage.getItem('rolib_data_v2');
   if (saved) {
     const parsed = JSON.parse(saved);
-    // If saved data has fewer docs/drawings than seed (old cache), reload from seed
     if ((parsed.docs||[]).length < seedDocs.length || (parsed.drawings||[]).length < seedDrawings.length) {
       data.docs = seedDocs; data.drawings = seedDrawings; data.software = seedSoftware; save();
     } else { data = parsed; }
@@ -1534,473 +1433,217 @@ function init() {
   animateStat('statDocs', data.docs.length + data.drawings.length);
 }
 
-function save() { localStorage.setItem('rolib_data', JSON.stringify(data)); }
+function save() { localStorage.setItem('rolib_data_v2', JSON.stringify(data)); }
 
-// ─── RENDER ──────────────────────────────────────────────────────────────────
+// ─── RENDER ───────────────────────────────────────────────────────────────────
 function renderAll() {
-  renderGrid('docs', 'all');
-  renderGrid('drawings', 'all');
-  renderSoftware();
-  renderAdminLists();
-  updateStatCount();
+  renderGrid('docs','all'); renderGrid('drawings','all');
+  renderSoftware(); renderAdminLists(); updateStatCount();
 }
-
-function updateStatCount() {
-  animateStat('statDocs', data.docs.length + data.drawings.length);
-}
-
+function updateStatCount() { animateStat('statDocs', data.docs.length + data.drawings.length); }
 function animateStat(id, target) {
   let el = document.getElementById(id); if (!el) return;
-  let start = 0; let step = Math.ceil(target / 30);
-  let timer = setInterval(() => { start = Math.min(start + step, target); el.textContent = start + '+'; if (start >= target) clearInterval(timer); }, 40);
+  let start = 0, step = Math.ceil(target/30);
+  let timer = setInterval(() => { start = Math.min(start+step, target); el.textContent = start+'+'; if(start>=target) clearInterval(timer); }, 40);
 }
 
 const docIcons = {
   "Training Manual": `<svg viewBox="0 0 24 24" fill="none" stroke="#0f7b8c" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-  "Service Manual": `<svg viewBox="0 0 24 24" fill="none" stroke="#c8972b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-  "default": `<svg viewBox="0 0 24 24" fill="none" stroke="#0b1f3a" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`
+  "Service Manual":  `<svg viewBox="0 0 24 24" fill="none" stroke="#c8972b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  "default":         `<svg viewBox="0 0 24 24" fill="none" stroke="#0b1f3a" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`
 };
 
-var viewMode = { docs: 'grid', drawings: 'grid' };
+var viewMode = { docs:'grid', drawings:'grid' };
 
 function setView(section, mode, btn) {
   viewMode[section] = mode;
-  ['grid','list'].forEach(m => {
-    const b = document.getElementById('view-' + m + '-' + section);
-    if (b) b.classList.toggle('active', m === mode);
-  });
-  // toggle scroll wrapper class
-  const wrap = document.getElementById('scroll-' + section);
-  if (wrap) wrap.style.paddingRight = mode === 'grid' ? '6px' : '0';
+  ['grid','list'].forEach(m => { const b=document.getElementById('view-'+m+'-'+section); if(b) b.classList.toggle('active', m===mode); });
   renderGrid(section, activeFilters[section]);
 }
 
-function renderGrid(section, filter, query = '') {
-  const container = document.getElementById('scroll-' + section);
-  const grid = document.getElementById('grid-' + section);
-  const mode = viewMode[section] || 'grid';
+function renderGrid(section, filter, query='') {
+  const grid = document.getElementById('grid-'+section);
+  const mode = viewMode[section]||'grid';
   const items = data[section].filter(d => {
-    const matchFilter = filter === 'all' || d.access === filter;
-    const matchSearch = !query || d.title.toLowerCase().includes(query.toLowerCase()) || d.category.toLowerCase().includes(query.toLowerCase());
-    return matchFilter && matchSearch;
+    const mF = filter==='all' || d.access===filter;
+    const mS = !query || d.title.toLowerCase().includes(query.toLowerCase()) || d.category.toLowerCase().includes(query.toLowerCase());
+    return mF && mS;
   });
-
-  if (items.length === 0) {
-    grid.className = 'doc-grid';
-    grid.innerHTML = `<div style="grid-column:1/-1;padding:40px 0;text-align:center;color:var(--gray-500);font-size:0.9rem;">No documents found for this filter.</div>`;
+  if (!items.length) {
+    grid.className='doc-grid';
+    grid.innerHTML=`<div style="grid-column:1/-1;padding:40px 0;text-align:center;color:var(--gray-500);font-size:0.9rem;">No documents found for this filter.</div>`;
     return;
   }
-
-  if (mode === 'list') {
-    grid.className = 'doc-list';
-    grid.innerHTML = items.map((d, idx) => {
-      const isFree = d.access === 'free';
+  if (mode==='list') {
+    grid.className='doc-list';
+    grid.innerHTML = items.map((d,idx) => {
+      const isFree = d.access==='free';
+      // ↓ KEY CHANGE: paid items open request modal
       const actionBtn = isFree
         ? `<a class="doc-list-action list-free-btn" href="${d.link}" target="_blank">👁 View</a>`
         : `<button class="doc-list-action list-paid-btn" onclick="addToCart(${d.id}, '${d.section}', event)">🛒 Add to Cart</button>`;
       return `<div class="doc-list-item">
-        <div class="doc-list-num">${idx + 1}</div>
+        <div class="doc-list-num">${idx+1}</div>
         <div class="doc-list-name">${d.title}</div>
         <span class="doc-list-cat">${d.category}</span>
-        <span class="doc-list-badge ${isFree ? 'badge-free' : 'badge-paid'}">${isFree ? 'Free' : 'Premium'}</span>${!isFree ? '<span style="color:var(--paid-badge);font-weight:700;font-size:0.82rem;margin:0 4px;">$5</span>' : ''}
+        <span class="doc-list-badge ${isFree?'badge-free':'badge-paid'}">${isFree?'Free':'Premium'}</span>
+        ${!isFree?'<span style="color:var(--paid-badge);font-weight:700;font-size:0.82rem;margin:0 4px;">$5</span>':''}
         ${actionBtn}
       </div>`;
     }).join('');
   } else {
-    grid.className = 'doc-grid';
+    grid.className='doc-grid';
     grid.innerHTML = items.map(d => {
-      const icon = docIcons[d.category] || docIcons['default'];
-      const isFree = d.access === 'free';
+      const icon = docIcons[d.category]||docIcons['default'];
+      const isFree = d.access==='free';
+      // ↓ KEY CHANGE: paid items open request modal
+      const btnHtml = isFree
+        ? `<a class="doc-card-btn free-btn" href="${d.link}" target="_blank">👁 View</a>`
+        : `<button class="doc-card-btn paid-btn" onclick="addToCart(${d.id}, '${d.section}', event)">🛒 Add to Cart</button>`;
       return `
-      <div class="doc-card" data-access="${d.access}" data-title="${d.title.toLowerCase()}">
-        <div class="doc-card-top">
-          <div class="doc-icon">${icon}</div>
-          <span class="badge ${isFree ? 'badge-free' : 'badge-paid'}">${isFree ? 'Free' : 'Premium'}</span>
-        </div>
+      <div class="doc-card" data-access="${d.access}">
+        <div class="doc-card-top"><div class="doc-icon">${icon}</div><span class="badge ${isFree?'badge-free':'badge-paid'}">${isFree?'Free':'Premium'}</span></div>
         <div class="doc-title">${d.title}</div>
         <div class="doc-desc">${d.desc}</div>
         <div class="doc-meta">
           <span class="doc-category">${d.category}</span>
-          ${isFree ? '<span style="color:var(--teal);font-weight:600;font-size:0.78rem;">Free – View Only</span>' : '<span style="color:var(--paid-badge);font-weight:700;font-size:0.85rem;">$5 &nbsp;·&nbsp; Premium</span>'}
+          ${isFree?'<span style="color:var(--teal);font-weight:600;font-size:0.78rem;">Free – View Only</span>':'<span style="color:var(--paid-badge);font-weight:700;font-size:0.85rem;">$5 &nbsp;·&nbsp; Premium</span>'}
         </div>
-        <a class="doc-card-btn ${isFree ? 'free-btn' : 'paid-btn'}" href="${isFree ? d.link : '#'}" ${isFree ? 'target="_blank"' : `onclick="addToCart(${d.id}, '${d.section}', event)"`}>
-          ${isFree ? '👁 View' : '🛒 Add to Cart'}
-        </a>
+        ${btnHtml}
       </div>`;
     }).join('');
   }
 }
 
 function renderSoftware() {
-  const grid = document.getElementById('software-grid');
-  grid.innerHTML = data.software.map(s => `
+  document.getElementById('software-grid').innerHTML = data.software.map(s => `
     <div class="sw-card">
-      <div class="sw-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <div class="sw-title">${s.name}</div>
-      <div class="sw-desc">${s.desc}</div>
-      <div class="sw-access">
-        <span class="sw-badge-free">Free Tool</span>
-        <a class="sw-link" href="${s.link}" target="_blank">Launch ↗</a>
-      </div>
+      <div class="sw-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="sw-title">${s.name}</div><div class="sw-desc">${s.desc}</div>
+      <div class="sw-access"><span class="sw-badge-free">Free Tool</span><a class="sw-link" href="${s.link}" target="_blank">Launch ↗</a></div>
     </div>`).join('');
 }
 
 function renderAdminLists() {
-  const all = [...data.docs, ...data.drawings];
+  const all = [...data.docs,...data.drawings];
   document.getElementById('admin-doc-list').innerHTML = all.map(d => `
     <div class="admin-item">
-      <div class="admin-item-info">
-        <div class="admin-item-name">${d.title}</div>
-        <div class="admin-item-meta">${d.section === 'docs' ? 'Docs' : 'Drawings'} · ${d.category} · <span style="color:${d.access==='free'?'var(--free-badge)':'var(--paid-badge)'}">${d.access}</span></div>
-      </div>
-      <div class="admin-item-actions">
-        <button class="admin-del" onclick="deleteDoc(${d.id}, '${d.section}')">Delete</button>
-      </div>
-    </div>`).join('') || '<div style="color:var(--gray-500);font-size:0.85rem;padding:8px">No documents added yet.</div>';
-
+      <div class="admin-item-info"><div class="admin-item-name">${d.title}</div>
+      <div class="admin-item-meta">${d.section==='docs'?'Docs':'Drawings'} · ${d.category} · <span style="color:${d.access==='free'?'var(--free-badge)':'var(--paid-badge)'}">${d.access}</span></div></div>
+      <div class="admin-item-actions"><button class="admin-del" onclick="deleteDoc(${d.id},'${d.section}')">Delete</button></div>
+    </div>`).join('') || '<div style="color:var(--gray-500);font-size:0.85rem;padding:8px">No documents yet.</div>';
   document.getElementById('admin-sw-list').innerHTML = data.software.map(s => `
     <div class="admin-item">
-      <div class="admin-item-info">
-        <div class="admin-item-name">${s.name}</div>
-        <div class="admin-item-meta"><a href="${s.link}" target="_blank" style="color:var(--teal)">Open tool ↗</a></div>
-      </div>
-      <div class="admin-item-actions">
-        <button class="admin-del" onclick="deleteSw(${s.id})">Delete</button>
-      </div>
-    </div>`).join('') || '<div style="color:var(--gray-500);font-size:0.85rem;padding:8px">No tools added yet.</div>';
+      <div class="admin-item-info"><div class="admin-item-name">${s.name}</div>
+      <div class="admin-item-meta"><a href="${s.link}" target="_blank" style="color:var(--teal)">Open ↗</a></div></div>
+      <div class="admin-item-actions"><button class="admin-del" onclick="deleteSw(${s.id})">Delete</button></div>
+    </div>`).join('') || '<div style="color:var(--gray-500);font-size:0.85rem;padding:8px">No tools yet.</div>';
 }
 
-// ─── TABS & FILTERS ──────────────────────────────────────────────────────────
-let activeFilters = { docs: 'all', drawings: 'all' };
+// ─── TABS & FILTERS ───────────────────────────────────────────────────────────
+let activeFilters = { docs:'all', drawings:'all' };
 
 function switchTab(section, btn) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('tab-' + section).classList.add('active');
+  document.getElementById('tab-'+section).classList.add('active');
 }
 
 function filterCards(section, filter, btn) {
   activeFilters[section] = filter;
-  const prefix = 'filter-';
   ['all','free','paid'].forEach(f => {
-    const el = document.getElementById(prefix + f + '-' + section);
-    if (el) { el.classList.remove('active','free-active','paid-active'); }
+    const el=document.getElementById('filter-'+f+'-'+section);
+    if(el) el.classList.remove('active','free-active','paid-active');
   });
   btn.classList.add('active');
-  if (filter === 'free') btn.classList.add('free-active');
-  if (filter === 'paid') btn.classList.add('paid-active');
-  const query = document.querySelector('#tab-' + section + ' .search-input')?.value || '';
-  renderGrid(section, filter, query);
+  if(filter==='free') btn.classList.add('free-active');
+  if(filter==='paid') btn.classList.add('paid-active');
+  const q = document.querySelector('#tab-'+section+' .search-input')?.value||'';
+  renderGrid(section, filter, q);
 }
 
-function searchCards(section, query) {
-  renderGrid(section, activeFilters[section], query);
-}
+function searchCards(section, q) { renderGrid(section, activeFilters[section], q); }
 
 function openTab(section) {
-  const btn = document.querySelector(`.tab-btn[onclick*="'${section}'"]`);
-  if (btn) switchTab(section, btn);
+  const btn=document.querySelector(`.tab-btn[onclick*="'${section}'"]`);
+  if(btn) switchTab(section, btn);
 }
 
 function openFilter(filter) {
   setTimeout(() => {
-    const section = document.querySelector('.tab-panel.active').id.replace('tab-','');
-    const btn = document.getElementById('filter-' + filter + '-' + section);
-    if (btn) filterCards(section, filter, btn);
+    const section=document.querySelector('.tab-panel.active').id.replace('tab-','');
+    const btn=document.getElementById('filter-'+filter+'-'+section);
+    if(btn) filterCards(section, filter, btn);
   }, 50);
 }
 
-// ─── ADMIN ACTIONS ────────────────────────────────────────────────────────────
-function addDocument() {
-  const title = document.getElementById('doc-title').value.trim();
-  const link = document.getElementById('doc-link').value.trim();
-  if (!title || !link) { toast('Please fill in Title and Link'); return; }
-  const doc = {
-    id: Date.now(),
-    title,
-    desc: document.getElementById('doc-desc').value.trim(),
-    category: document.getElementById('doc-cat').value,
-    access: document.getElementById('doc-access').value,
-    link,
-    price: document.getElementById('doc-price').value.trim(),
-    section: document.getElementById('doc-section').value,
-  };
-  data[doc.section].push(doc);
-  save(); renderAll();
-  ['doc-title','doc-desc','doc-link','doc-price'].forEach(id => document.getElementById(id).value = '');
-  toast('Document added successfully!');
+// ─── REQUEST MODAL ────────────────────────────────────────────────────────────
+let currentRequestTitle = '';
+
+function openRequestModal(title) {
+  currentRequestTitle = title;
+  document.getElementById('reqDocName').textContent = title;
+  document.getElementById('reqSuccessDoc').textContent = title;
+  document.getElementById('reqName').value = '';
+  document.getElementById('reqEmail').value = '';
+  document.getElementById('reqMessage').value = '';
+  const errEl = document.getElementById('reqError');
+  errEl.textContent = ''; errEl.classList.remove('show');
+  document.getElementById('reqForm').style.display = '';
+  document.getElementById('reqSuccess').style.display = 'none';
+  document.getElementById('reqOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('reqName').focus(), 140);
 }
 
-function addSoftware() {
-  const name = document.getElementById('sw-name').value.trim();
-  const link = document.getElementById('sw-link').value.trim();
-  if (!name || !link) { toast('Please fill in Name and URL'); return; }
-  data.software.push({
-    id: Date.now(),
-    name,
-    desc: document.getElementById('sw-desc').value.trim(),
-    link,
-  });
-  save(); renderAll();
-  ['sw-name','sw-desc','sw-link'].forEach(id => document.getElementById(id).value = '');
-  toast('Software tool added!');
-}
+function closeReqModal() { document.getElementById('reqOverlay').classList.remove('open'); }
+function closeReqOutside(e) { if(e.target===document.getElementById('reqOverlay')) closeReqModal(); }
 
-function deleteDoc(id, section) {
-  if (!confirm('Delete this document?')) return;
-  data[section] = data[section].filter(d => d.id !== id);
-  save(); renderAll(); toast('Deleted.');
-}
-
-function deleteSw(id) {
-  if (!confirm('Delete this tool?')) return;
-  data.software = data.software.filter(s => s.id !== id);
-  save(); renderAll(); toast('Deleted.');
-}
-
-// ─── ADMIN UI ────────────────────────────────────────────────────────────────
-function openAdmin(e) { e.preventDefault(); document.getElementById('adminOverlay').classList.add('open'); }
-function closeAdmin() { document.getElementById('adminOverlay').classList.remove('open'); }
-function closeAdminOutside(e) { if (e.target === document.getElementById('adminOverlay')) closeAdmin(); }
-
-// ─── CONTACT ─────────────────────────────────────────────────────────────────
-function submitContact(e) { e.preventDefault(); toast('Message sent! We\'ll respond shortly.'); e.target.reset(); }
-
-// ─── TOAST ───────────────────────────────────────────────────────────────────
-function toast(msg) {
-  const el = document.getElementById('toast');
-  el.textContent = '✓ ' + msg;
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 3000);
-}
-
-// ─── START
-init();
-
-// ─── ADMIN PASSWORD ──────────────────────────────────────────────────────────
-let ADMIN_PASS = '42304230';
-
-// ─── ADMIN LOGIN ─────────────────────────────────────────────────────────────
-function openAdminLogin(e) {
-  if(e) e.preventDefault();
-  document.getElementById('adminLoginOverlay').classList.add('open');
-  document.getElementById('adminLoginPw').value = '';
-  document.getElementById('adminLoginErr').classList.remove('show');
-  setTimeout(() => document.getElementById('adminLoginPw').focus(), 100);
-}
-function closeAdminLogin() {
-  document.getElementById('adminLoginOverlay').classList.remove('open');
-}
-function doAdminLogin() {
-  const val = document.getElementById('adminLoginPw').value;
-  if (val === ADMIN_PASS) {
-    closeAdminLogin();
-    document.getElementById('adminOverlay').classList.add('open');
-    renderAdminGalleryGrid();
-  } else {
-    document.getElementById('adminLoginErr').classList.add('show');
-    document.getElementById('adminLoginPw').value = '';
-    document.getElementById('adminLoginPw').focus();
+function submitDocRequest() {
+  const name  = document.getElementById('reqName').value.trim();
+  const email = document.getElementById('reqEmail').value.trim();
+  const errEl = document.getElementById('reqError');
+  if (!name) {
+    errEl.textContent='Please enter your full name.'; errEl.classList.add('show');
+    document.getElementById('reqName').focus(); return;
   }
-}
-
-// ─── CHANGE PASSWORD ─────────────────────────────────────────────────────────
-function changeAdminPw() {
-  const n = document.getElementById('adminNewPw').value;
-  const c = document.getElementById('adminConfirmPw').value;
-  const msg = document.getElementById('adminPwMsg');
-  msg.className = 'admin-msg';
-  if (!n || n.length < 4) { msg.className='admin-msg err'; msg.textContent='Password must be at least 4 characters.'; return; }
-  if (n !== c) { msg.className='admin-msg err'; msg.textContent='Passwords do not match.'; return; }
-  ADMIN_PASS = n;
-  msg.className='admin-msg ok'; msg.textContent='✓ Password updated successfully.';
-  document.getElementById('adminNewPw').value = '';
-  document.getElementById('adminConfirmPw').value = '';
-}
-
-// ─── GALLERY SLIDESHOW ───────────────────────────────────────────────────────
-let galleryImages = [];
-let hgCurrent = 0;
-let hgTimer = null;
-const HG_DURATION = 10000;
-
-const hgDefaults = [
-  {label:'RO Membrane Array Layout',    bg:'linear-gradient(160deg,#0d2440 0%,#091a30 60%,#060f1c 100%)'},
-  {label:'P&ID – High Pressure System', bg:'linear-gradient(160deg,#0a1e35 0%,#0d2844 60%,#071525 100%)'},
-  {label:'Desalination Plant Overview', bg:'linear-gradient(160deg,#0d2440 0%,#102a48 60%,#081828 100%)'},
-  {label:'Wastewater Treatment Flow',   bg:'linear-gradient(160deg,#0a1e35 0%,#0b2238 60%,#061220 100%)'},
-  {label:'Pump Station Drawing',        bg:'linear-gradient(160deg,#0d2440 0%,#0e2540 60%,#07141e 100%)'},
-  {label:'Pre-Treatment Design Doc',    bg:'linear-gradient(160deg,#0a1e35 0%,#0c2038 60%,#051015 100%)'},
-];
-
-function buildGallery() {
-  const slidesEl = document.getElementById('hgSlides');
-  const dotsEl   = document.getElementById('hgDots');
-  if (!slidesEl || !dotsEl) return;
-  const items = galleryImages.length > 0 ? galleryImages : null;
-  const count = items ? items.length : hgDefaults.length;
-
-  slidesEl.innerHTML = '';
-  for (let i = 0; i < count; i++) {
-    const div = document.createElement('div');
-    div.className = 'hg-slide' + (i === 0 ? ' active' : '');
-    div.id = 'hgSlide' + i;
-    if (items) {
-      const imgId = items[i].id;
-      const escapedName = items[i].name.replace(/"/g, '&quot;');
-      div.innerHTML = `<img src="${items[i].src}" alt="${items[i].name}">
-        <div class="hg-slide-caption">
-          <input class="hg-caption-input" value="${escapedName}" title="Click to rename"
-            onchange="renameGalleryImage(${imgId}, this.value)"
-            onkeydown="if(event.key==='Enter'){this.blur();}"
-            onclick="event.stopPropagation();"
-          >
-        </div>
-        <div class="hg-rename-hint">✎ click caption to rename</div>`;
-    } else {
-      const d = hgDefaults[i];
-      div.innerHTML = `
-        <div class="hg-slide-placeholder" style="background:${d.bg};">
-          <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#1aabb8" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>${d.label}</span>
-        </div>
-        <div class="hg-slide-caption">${d.label}</div>`;
-    }
-    slidesEl.appendChild(div);
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent='Please enter a valid email address.'; errEl.classList.add('show');
+    document.getElementById('reqEmail').focus(); return;
   }
-
-  dotsEl.innerHTML = '';
-  for (let i = 0; i < count; i++) {
-    const btn = document.createElement('button');
-    btn.className = 'hg-nav-dot' + (i === 0 ? ' active' : '');
-    btn.id = 'hgDot' + i;
-    btn.onclick = () => hgGoTo(i, true);
-    dotsEl.appendChild(btn);
-  }
-
-  hgCurrent = 0;
-  clearTimeout(hgTimer);
-  hgStartTimer(count);
+  errEl.classList.remove('show');
+  document.getElementById('reqForm').style.display = 'none';
+  document.getElementById('reqSuccess').style.display = '';
+  toast('Request sent for: ' + currentRequestTitle);
 }
 
-function hgGoTo(idx, reset) {
-  const count = galleryImages.length > 0 ? galleryImages.length : hgDefaults.length;
-  const prev = hgCurrent;
-  hgCurrent = (idx + count) % count;
-  document.getElementById('hgSlide' + prev)?.classList.remove('active');
-  document.getElementById('hgSlide' + hgCurrent)?.classList.add('active');
-  document.getElementById('hgDot' + prev)?.classList.remove('active');
-  document.getElementById('hgDot' + hgCurrent)?.classList.add('active');
-  if (reset) { clearTimeout(hgTimer); hgResetBar(); hgStartTimer(count); }
-}
-
-function hgResetBar() {
-  const bar = document.getElementById('hgProgress');
-  if (!bar) return;
-  bar.style.transition = 'none'; bar.style.width = '0%';
-}
-
-function hgStartTimer(count) {
-  hgResetBar();
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    const bar = document.getElementById('hgProgress');
-    if (bar) { bar.style.transition = `width ${HG_DURATION}ms linear`; bar.style.width = '100%'; }
-  }));
-  hgTimer = setTimeout(() => {
-    hgGoTo((hgCurrent + 1) % count, false);
-    hgStartTimer(count);
-  }, HG_DURATION);
-}
-
-// ─── GALLERY ADMIN ───────────────────────────────────────────────────────────
-function handleGalleryUpload(input) {
-  Array.from(input.files).forEach(file => {
-    if (file.size > 5*1024*1024) { toast(file.name + ' exceeds 5 MB'); return; }
-    const reader = new FileReader();
-    reader.onload = e => {
-      galleryImages.push({ id: Date.now()+Math.random(), name: file.name.replace(/\.[^.]+$/, ''), src: e.target.result });
-      buildGallery();
-      renderAdminGalleryGrid();
-    };
-    reader.readAsDataURL(file);
-  });
-  input.value = '';
-}
-
-function removeGalleryImage(id) {
-  galleryImages = galleryImages.filter(img => img.id !== id);
-  buildGallery();
-  renderAdminGalleryGrid();
-}
-
-function renderAdminGalleryGrid() {
-  const grid = document.getElementById('adminGalleryGrid');
-  if (!grid) return;
-  if (!galleryImages.length) {
-    grid.innerHTML = '<div style="color:var(--gray-500);font-size:0.8rem;padding:10px;text-align:center;border:1px dashed var(--gray-200);border-radius:6px;">No images uploaded yet</div>';
-    return;
-  }
-  grid.innerHTML = galleryImages.map(img => `
-    <div class="gallery-thumb">
-      <img src="${img.src}" alt="${img.name}">
-      <button class="gallery-thumb-del" onclick="removeGalleryImage(${img.id})" title="Delete">✕</button>
-      <div class="gallery-thumb-name">
-        <input type="text" value="${img.name.replace(/"/g,'&quot;')}" title="Click to rename"
-          onchange="renameGalleryImage(${img.id}, this.value)"
-          onkeydown="if(event.key==='Enter'){this.blur();}"
-          placeholder="Enter name…">
-      </div>
-    </div>`).join('');
-}
-
-function renameGalleryImage(id, newName) {
-  const img = galleryImages.find(g => g.id === id);
-  if (!img || !newName.trim()) return;
-  img.name = newName.trim();
-  // Update the matching caption input in the live hero gallery
-  const idx = galleryImages.indexOf(img);
-  const slideInput = document.querySelector('#hgSlide' + idx + ' .hg-caption-input');
-  if (slideInput && slideInput !== document.activeElement) slideInput.value = img.name;
-  // Update admin thumb input if it wasn't the source
-  const adminInputs = document.querySelectorAll('#adminGalleryGrid .gallery-thumb-name input');
-  if (adminInputs[idx] && adminInputs[idx] !== document.activeElement) adminInputs[idx].value = img.name;
-  toast('Renamed to: ' + img.name);
-}
-
-// Drag & drop for gallery
-document.addEventListener('DOMContentLoaded', function() {
-  const zone = document.getElementById('galleryUploadZone');
-  if (!zone) return;
-  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
-  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-  zone.addEventListener('drop', e => {
-    e.preventDefault(); zone.classList.remove('drag-over');
-    if (e.dataTransfer.files.length) handleGalleryUpload({ files: e.dataTransfer.files, value: '' });
-  });
-  // Start gallery
-  buildGallery();
-  renderAdminGalleryGrid();
-});
-
+document.addEventListener('keydown', e => { if(e.key==='Escape') { closeReqModal(); closeSub(); } });
 
 // ─── CART ─────────────────────────────────────────────────────────────────────
+// ⚠️  SETUP: replace these two values before going live
+const FORMSPREE_ID = 'mgonzbaw';     // e.g. 'xpwzgkqr' from formspree.io
+const ADMIN_EMAIL  = 'rodesignlibrary@gmail.com'; // your email for order copies
+
 let cartItems = [];
+let paypalButtonRendered = false;
 
 function addToCart(id, section, e) {
   if (e) e.preventDefault();
   const item = data[section].find(d => d.id === id);
   if (!item) return;
   if (cartItems.find(c => c.id === id && c.section === section)) {
-    toast('Already in cart: ' + item.title);
-    return;
+    toast('Already in cart'); openCart(e); return;
   }
-  cartItems.push({ id, section, title: item.title, price: 5 });
-  renderCart();
-  openCart(e);
-  toast('Added to cart: ' + item.title);
+  cartItems.push({ id, section, title: item.title, category: item.category, link: item.link, price: 5 });
+  renderCart(); bumpCount(); openCart(e);
+  toast('Added: ' + item.title.substring(0,40));
+}
+
+function bumpCount() {
+  const el = document.getElementById('cartCount');
+  if (!el) return;
+  el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
+  setTimeout(() => el.classList.remove('bump'), 300);
 }
 
 function renderCart() {
@@ -2009,165 +1652,379 @@ function renderCart() {
   const empty   = document.getElementById('cartEmpty');
   const totalEl = document.getElementById('cartTotal');
   const countEl = document.getElementById('cartCount');
-
-  countEl.textContent = cartItems.length;
-
+  if (countEl) countEl.textContent = cartItems.length;
   if (!cartItems.length) {
-    empty.style.display = '';
-    listEl.innerHTML = '';
-    footer.style.display = 'none';
-    return;
+    if (empty)  empty.style.display  = '';
+    if (listEl) listEl.innerHTML     = '';
+    if (footer) footer.style.display = 'none';
+    paypalButtonRendered = false; return;
   }
-
-  empty.style.display = 'none';
-  footer.style.display = '';
-
+  if (empty)  empty.style.display  = 'none';
+  if (footer) footer.style.display = '';
   listEl.innerHTML = cartItems.map(c => `
-    <div class="cart-item" id="cart-item-${c.id}">
+    <div class="cart-item">
+      <div class="cart-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0f7b8c" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      </div>
       <div class="cart-item-info">
         <div class="cart-item-name">${c.title}</div>
+        <div class="cart-item-cat">${c.category}</div>
         <div class="cart-item-price">$${c.price.toFixed(2)}</div>
       </div>
-      <button class="cart-item-del" title="Remove" onclick="removeFromCart(${c.id}, '${c.section}')">✕</button>
+      <button class="cart-item-del" onclick="removeFromCart(${c.id},'${c.section}')">✕</button>
     </div>`).join('');
-
   const total = cartItems.reduce((s, c) => s + c.price, 0);
-  totalEl.textContent = '$' + total.toFixed(2);
+  if (totalEl) totalEl.textContent = '$' + total.toFixed(2);
+  if (!paypalButtonRendered) {
+    renderPayPalButton(total);
+    paypalButtonRendered = true;
+  }
 }
 
 function removeFromCart(id, section) {
   cartItems = cartItems.filter(c => !(c.id === id && c.section === section));
+  paypalButtonRendered = false;
+  const container = document.getElementById('paypal-button-container');
+  if (container) container.innerHTML = '';
   renderCart();
+  if (cartItems.length) {
+    renderPayPalButton(cartItems.reduce((s,c) => s + c.price, 0));
+    paypalButtonRendered = true;
+  }
+  const countEl = document.getElementById('cartCount');
+  if (countEl) countEl.textContent = cartItems.length;
 }
 
 function openCart(e) {
   if (e) e.preventDefault();
   document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartNormal').style.display = '';
+  document.getElementById('cartSuccess').classList.remove('show');
+}
+function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); }
+function closeCartOutside(e) { if (e.target === document.getElementById('cartOverlay')) closeCart(); }
+
+function clearCartErr(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('show');
+  const inp = id === 'nameErr'
+    ? document.getElementById('checkoutName')
+    : document.getElementById('checkoutEmail');
+  if (inp) inp.classList.remove('error');
 }
 
-function closeCart() {
-  document.getElementById('cartOverlay').classList.remove('open');
-}
-
-function closeCartOutside(e) {
-  if (e.target === document.getElementById('cartOverlay')) closeCart();
-}
-
-function processCheckout() {
-  const name = document.getElementById('checkoutName').value.trim();
+function validateCheckoutFields() {
+  const name  = document.getElementById('checkoutName').value.trim();
   const email = document.getElementById('checkoutEmail').value.trim();
-  if (!name || !email) { toast('Please enter your name and email'); return; }
-  if (!cartItems.length) { toast('Your cart is empty'); return; }
-  toast('Order received! Download links sent to ' + email);
-  cartItems = [];
-  renderCart();
-  closeCart();
-  document.getElementById('checkoutName').value = '';
-  document.getElementById('checkoutEmail').value = '';
+  let ok = true;
+  if (!name) {
+    document.getElementById('nameErr').classList.add('show');
+    document.getElementById('checkoutName').classList.add('error');
+    ok = false;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('emailErr').classList.add('show');
+    document.getElementById('checkoutEmail').classList.add('error');
+    ok = false;
+  }
+  return ok;
 }
 
-// ─── WORD-BY-WORD BANNER
-(function() {
-  var YT_SVG = '<svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>';
+// ─── PAYPAL BUTTON ────────────────────────────────────────────────────────────
+function renderPayPalButton(total) {
+  const container = document.getElementById('paypal-button-container');
+  if (!container) return;
+  container.innerHTML = '';
+  if (typeof paypal === 'undefined') {
+    container.innerHTML =
+      '<div style="background:#fef3cd;border:1.5px solid #f0c060;border-radius:8px;padding:12px 14px;' +
+      'font-size:0.8rem;color:#7a5800;line-height:1.6;">' +
+      '&#9888;&#65039; <strong>Setup required:</strong> Replace <code>YOUR_PAYPAL_CLIENT_ID</code> ' +
+      'in the &lt;script&gt; tag in the &lt;head&gt; with your real PayPal Client ID from ' +
+      '<a href="https://developer.paypal.com" target="_blank" style="color:#0f7b8c;">developer.paypal.com</a>.' +
+      '</div>';
+    return;
+  }
+  paypal.Buttons({
+    style: { layout:'vertical', color:'gold', shape:'rect', label:'pay', height:44 },
+    onClick: function(data, actions) {
+      return validateCheckoutFields() ? actions.resolve() : actions.reject();
+    },
+    createOrder: function(data, actions) {
+      const t = cartItems.reduce((s,c) => s + c.price, 0);
+      return actions.order.create({
+        purchase_units: [{
+          description: 'RO Design Library – ' + cartItems.length + ' document(s)',
+          amount: { value: t.toFixed(2), currency_code: 'USD' }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(orderData) {
+        const name  = document.getElementById('checkoutName').value.trim();
+        const email = document.getElementById('checkoutEmail').value.trim();
+        const txId  = orderData.id;
+        const purchased = cartItems.slice();
+        sendConfirmationEmail(name, email, txId, purchased);
+        showPaymentSuccess(name, email, purchased);
+        cartItems = []; paypalButtonRendered = false;
+        const countEl = document.getElementById('cartCount');
+        if (countEl) countEl.textContent = 0;
+      });
+    },
+    onError:  function(err) { console.error('PayPal error', err); toast('PayPal error — please try again.'); },
+    onCancel: function()    { toast('Payment cancelled — cart saved.'); }
+  }).render('#paypal-button-container');
+}
 
-  var sentences = [
+// ─── FORMSPREE EMAIL ──────────────────────────────────────────────────────────
+function sendConfirmationEmail(name, email, txId, purchased) {
+  if (FORMSPREE_ID === 'mgonzbaw') {
+    console.warn('Formspree ID not set — email skipped.'); return;
+  }
+  const docList = purchased.map((c,i) =>
+    (i+1) + '. ' + c.title + (c.link && c.link !== '#' ? ' — ' + c.link : '')
+  ).join('\n');
+
+  const send = function(payload) {
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function(err) { console.error('Formspree:', err); });
+  };
+
+  // Email to buyer
+  send({
+    _replyto: email,
+    _subject: 'Your RO Design Library Documents — Order Confirmed',
+    name: name, email: email, txid: txId,
+    message: 'Hello ' + name + ',\n\nThank you for your purchase!\nTransaction ID: ' + txId +
+             '\n\nYour documents:\n' + docList +
+             '\n\nRO Design Library | rodesignlibrary.com'
+  });
+
+  // Admin copy
+  send({
+    _replyto: email,
+    _subject: '[NEW ORDER] ' + name + ' — $' + purchased.reduce(function(s,c){return s+c.price;},0).toFixed(2),
+    name: 'Order from: ' + name, email: ADMIN_EMAIL,
+    buyer_email: email, txid: txId,
+    message: 'NEW ORDER\n\nBuyer: ' + name + '\nEmail: ' + email + '\nTx: ' + txId +
+             '\n\nDocs:\n' + docList
+  });
+}
+
+// ─── SUCCESS STATE ────────────────────────────────────────────────────────────
+function showPaymentSuccess(name, email, purchased) {
+  document.getElementById('cartNormal').style.display = 'none';
+  document.getElementById('cartSuccess').classList.add('show');
+  const sEl = document.getElementById('successEmail');
+  if (sEl) sEl.textContent = email;
+  const listEl = document.getElementById('unlockedDocsList');
+  if (listEl) {
+    listEl.innerHTML = purchased.map(function(c) {
+      return '<div class="unlocked-doc">' +
+        '<div class="unlocked-doc-icon">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="#0f7b8c" stroke-width="2">' +
+        '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>' +
+        '<polyline points="14,2 14,8 20,8"/></svg></div>' +
+        '<div class="unlocked-doc-name">' + c.title + '</div>' +
+        (c.link && c.link !== '#'
+          ? '<a class="unlocked-doc-link" href="' + c.link + '" target="_blank">' +
+            '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
+            '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>' +
+            '<polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Open Doc</a>'
+          : '<span style="font-size:0.72rem;color:var(--gray-500);padding:7px 12px;' +
+            'background:var(--gray-100);border-radius:6px;">Link coming</span>') +
+        '</div>';
+    }).join('');
+  }
+}
+
+// ─── SUBSCRIPTION MODAL ───────────────────────────────────────────────────────
+let subPlan = '';
+function openSubModal(plan, price) {
+  subPlan = plan;
+  document.getElementById('subModalTitle').textContent = plan + ' Plan — $' + price + '/mo';
+  document.getElementById('subModalDesc').textContent =
+    'Subscribe to the ' + plan + ' plan for $' + price + '/month. ' +
+    'Enter your details and we\'ll send your access link.';
+  document.getElementById('subName').value  = '';
+  document.getElementById('subEmail').value = '';
+  document.getElementById('subOverlay').classList.add('open');
+}
+function closeSub() { document.getElementById('subOverlay').classList.remove('open'); }
+function closeSubOutside(e) { if (e.target === document.getElementById('subOverlay')) closeSub(); }
+function processSubscription() {
+  const n  = document.getElementById('subName').value.trim();
+  const em = document.getElementById('subEmail').value.trim();
+  if (!n || !em) { toast('Please enter name and email'); return; }
+  toast('Subscription request sent for ' + subPlan + ' plan!'); closeSub();
+}
+
+// ─── ADMIN ────────────────────────────────────────────────────────────────────
+let ADMIN_PASS = '42304230';
+
+function openAdminLogin(e) {
+  if(e) e.preventDefault();
+  document.getElementById('adminLoginOverlay').classList.add('open');
+  document.getElementById('adminLoginPw').value='';
+  document.getElementById('adminLoginErr').classList.remove('show');
+  setTimeout(()=>document.getElementById('adminLoginPw').focus(),100);
+}
+function closeAdminLogin() { document.getElementById('adminLoginOverlay').classList.remove('open'); }
+function doAdminLogin() {
+  const val=document.getElementById('adminLoginPw').value;
+  if(val===ADMIN_PASS){ closeAdminLogin(); document.getElementById('adminOverlay').classList.add('open'); renderAdminGalleryGrid(); }
+  else { document.getElementById('adminLoginErr').classList.add('show'); document.getElementById('adminLoginPw').value=''; document.getElementById('adminLoginPw').focus(); }
+}
+function changeAdminPw() {
+  const n=document.getElementById('adminNewPw').value, c=document.getElementById('adminConfirmPw').value, msg=document.getElementById('adminPwMsg');
+  msg.className='admin-msg';
+  if(!n||n.length<4){msg.className='admin-msg err';msg.textContent='Password must be at least 4 characters.';return;}
+  if(n!==c){msg.className='admin-msg err';msg.textContent='Passwords do not match.';return;}
+  ADMIN_PASS=n; msg.className='admin-msg ok'; msg.textContent='✓ Password updated.';
+  document.getElementById('adminNewPw').value=''; document.getElementById('adminConfirmPw').value='';
+}
+function openAdmin(e){e.preventDefault();document.getElementById('adminOverlay').classList.add('open');}
+function closeAdmin(){document.getElementById('adminOverlay').classList.remove('open');}
+function closeAdminOutside(e){if(e.target===document.getElementById('adminOverlay'))closeAdmin();}
+function submitContact(e){e.preventDefault();toast('Message sent! We\'ll respond shortly.');e.target.reset();}
+
+function addDocument() {
+  const title=document.getElementById('doc-title').value.trim(), link=document.getElementById('doc-link').value.trim();
+  if(!title||!link){toast('Please fill in Title and Link');return;}
+  const doc={id:Date.now(),title,desc:document.getElementById('doc-desc').value.trim(),category:document.getElementById('doc-cat').value,access:document.getElementById('doc-access').value,link,price:document.getElementById('doc-price').value.trim(),section:document.getElementById('doc-section').value};
+  data[doc.section].push(doc); save(); renderAll();
+  ['doc-title','doc-desc','doc-link','doc-price'].forEach(id=>document.getElementById(id).value='');
+  toast('Document added!');
+}
+function addSoftware() {
+  const name=document.getElementById('sw-name').value.trim(), link=document.getElementById('sw-link').value.trim();
+  if(!name||!link){toast('Fill in Name and URL');return;}
+  data.software.push({id:Date.now(),name,desc:document.getElementById('sw-desc').value.trim(),link});
+  save(); renderAll(); ['sw-name','sw-desc','sw-link'].forEach(id=>document.getElementById(id).value=''); toast('Tool added!');
+}
+function deleteDoc(id,section){if(!confirm('Delete?'))return;data[section]=data[section].filter(d=>d.id!==id);save();renderAll();toast('Deleted.');}
+function deleteSw(id){if(!confirm('Delete?'))return;data.software=data.software.filter(s=>s.id!==id);save();renderAll();toast('Deleted.');}
+
+function toast(msg) {
+  const el=document.getElementById('toast'); el.textContent='✓ '+msg; el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),3200);
+}
+
+// ─── GALLERY ─────────────────────────────────────────────────────────────────
+let galleryImages=[], hgCurrent=0, hgTimer=null;
+const HG_DURATION=10000;
+const hgDefaults=[
+  {label:'RO Membrane Array Layout',bg:'linear-gradient(160deg,#0d2440,#091a30,#060f1c)'},
+  {label:'P&ID – High Pressure System',bg:'linear-gradient(160deg,#0a1e35,#0d2844,#071525)'},
+  {label:'Desalination Plant Overview',bg:'linear-gradient(160deg,#0d2440,#102a48,#081828)'},
+  {label:'Wastewater Treatment Flow',bg:'linear-gradient(160deg,#0a1e35,#0b2238,#061220)'},
+  {label:'Pump Station Drawing',bg:'linear-gradient(160deg,#0d2440,#0e2540,#07141e)'},
+  {label:'Pre-Treatment Design Doc',bg:'linear-gradient(160deg,#0a1e35,#0c2038,#051015)'},
+];
+function buildGallery() {
+  const slidesEl=document.getElementById('hgSlides'), dotsEl=document.getElementById('hgDots');
+  if(!slidesEl||!dotsEl) return;
+  const items=galleryImages.length>0?galleryImages:null, count=items?items.length:hgDefaults.length;
+  slidesEl.innerHTML='';
+  for(let i=0;i<count;i++){
+    const div=document.createElement('div'); div.className='hg-slide'+(i===0?' active':''); div.id='hgSlide'+i;
+    if(items){const img=items[i];div.innerHTML=`<img src="${img.src}" alt="${img.name}"><div class="hg-slide-caption"><input class="hg-caption-input" value="${img.name.replace(/"/g,'&quot;')}" onchange="renameGalleryImage(${img.id},this.value)" onkeydown="if(event.key==='Enter')this.blur();" onclick="event.stopPropagation();"></div><div class="hg-rename-hint">✎ click to rename</div>`;}
+    else{const d=hgDefaults[i];div.innerHTML=`<div class="hg-slide-placeholder" style="background:${d.bg};"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#1aabb8" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>${d.label}</span></div><div class="hg-slide-caption">${d.label}</div>`;}
+    slidesEl.appendChild(div);
+  }
+  dotsEl.innerHTML='';
+  for(let i=0;i<count;i++){const btn=document.createElement('button');btn.className='hg-nav-dot'+(i===0?' active':'');btn.id='hgDot'+i;btn.onclick=()=>hgGoTo(i,true);dotsEl.appendChild(btn);}
+  hgCurrent=0; clearTimeout(hgTimer); hgStartTimer(count);
+}
+function hgGoTo(idx,reset){
+  const count=galleryImages.length>0?galleryImages.length:hgDefaults.length, prev=hgCurrent;
+  hgCurrent=(idx+count)%count;
+  document.getElementById('hgSlide'+prev)?.classList.remove('active');
+  document.getElementById('hgSlide'+hgCurrent)?.classList.add('active');
+  document.getElementById('hgDot'+prev)?.classList.remove('active');
+  document.getElementById('hgDot'+hgCurrent)?.classList.add('active');
+  if(reset){clearTimeout(hgTimer);hgResetBar();hgStartTimer(count);}
+}
+function hgResetBar(){const bar=document.getElementById('hgProgress');if(!bar)return;bar.style.transition='none';bar.style.width='0%';}
+function hgStartTimer(count){
+  hgResetBar();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{const bar=document.getElementById('hgProgress');if(bar){bar.style.transition=`width ${HG_DURATION}ms linear`;bar.style.width='100%';}}));
+  hgTimer=setTimeout(()=>{hgGoTo((hgCurrent+1)%count,false);hgStartTimer(count);},HG_DURATION);
+}
+function handleGalleryUpload(input){
+  Array.from(input.files).forEach(file=>{
+    if(file.size>5*1024*1024){toast(file.name+' exceeds 5 MB');return;}
+    const reader=new FileReader();
+    reader.onload=e=>{galleryImages.push({id:Date.now()+Math.random(),name:file.name.replace(/\.[^.]+$/,''),src:e.target.result});buildGallery();renderAdminGalleryGrid();};
+    reader.readAsDataURL(file);
+  });
+  input.value='';
+}
+function removeGalleryImage(id){galleryImages=galleryImages.filter(img=>img.id!==id);buildGallery();renderAdminGalleryGrid();}
+function renderAdminGalleryGrid(){
+  const grid=document.getElementById('adminGalleryGrid');if(!grid)return;
+  if(!galleryImages.length){grid.innerHTML='<div style="color:var(--gray-500);font-size:0.8rem;padding:10px;text-align:center;border:1px dashed var(--gray-200);border-radius:6px;">No images uploaded yet</div>';return;}
+  grid.innerHTML=galleryImages.map(img=>`<div class="gallery-thumb"><img src="${img.src}" alt="${img.name}"><button class="gallery-thumb-del" onclick="removeGalleryImage(${img.id})">✕</button><div class="gallery-thumb-name"><input type="text" value="${img.name.replace(/"/g,'&quot;')}" onchange="renameGalleryImage(${img.id},this.value)" onkeydown="if(event.key==='Enter')this.blur();"></div></div>`).join('');
+}
+function renameGalleryImage(id,newName){
+  const img=galleryImages.find(g=>g.id===id);if(!img||!newName.trim())return;
+  img.name=newName.trim(); const idx=galleryImages.indexOf(img);
+  const si=document.querySelector('#hgSlide'+idx+' .hg-caption-input');if(si&&si!==document.activeElement)si.value=img.name;
+  toast('Renamed to: '+img.name);
+}
+
+// ─── WBW BANNER ───────────────────────────────────────────────────────────────
+(function(){
+  var YT_SVG='<svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>';
+  var sentences=[
     [{t:'Your'},{t:'Entry'},{t:'Point'},{t:'to'},{t:'Professional',em:1},{t:'RO',em:1},{t:'Design',em:1},{t:'Calculations',em:1},{t:'&'},{t:'Guides.'}],
-    [{t:'Engineers'},{t:'Worldwide'},{t:'Trust'},{t:'RO',em:1},{t:'Design',em:1},{t:'Library',em:1},{t:'\u2013'},{t:'See'},{t:'Why'},{t:'Inside.'}],
-    [{t:'Unlock'},{t:'RO',em:1},{t:'Design',em:1},{t:'Resources',em:1},{t:'\u2013'},{t:'Go'},{t:'Beyond'},{t:'the'},{t:'Homepage!'}],
+    [{t:'Engineers'},{t:'Worldwide'},{t:'Trust'},{t:'RO',em:1},{t:'Design',em:1},{t:'Library',em:1},{t:'–'},{t:'See'},{t:'Why'},{t:'Inside.'}],
+    [{t:'Unlock'},{t:'RO',em:1},{t:'Design',em:1},{t:'Resources',em:1},{t:'–'},{t:'Go'},{t:'Beyond'},{t:'the'},{t:'Homepage!'}],
     [{t:'Step'},{t:'Inside:'},{t:'Practical'},{t:'RO',em:1},{t:'Manuals,',em:1},{t:'Engineering',em:1},{t:'Docs',em:1},{t:'&'},{t:'Design',em:1},{t:'Tools',em:1},{t:'Await'},{t:'You.'}],
     [{t:'Explore'},{t:'Now:'},{t:'Sample',em:1},{t:'Documents,',em:1},{t:'Downloads'},{t:'&'},{t:'Paid',em:1},{t:'Pro',em:1},{t:'Tools',em:1},{t:'Inside.'}],
-    [{t:'YOUTUBE',yt:1},{t:'Watch'},{t:'RO',em:1},{t:'Engineering',em:1},{t:'Tutorials',em:1},{t:'on'},{t:'/\u00a0RODesignLibrary',em:1}]
+    [{t:'YOUTUBE',yt:1},{t:'Watch'},{t:'RO',em:1},{t:'Engineering',em:1},{t:'Tutorials',em:1},{t:'on'},{t:'/ RODesignLibrary',em:1}]
   ];
-
-  var stage = document.getElementById('wbwStage');
-  var pipsEl = document.getElementById('wbwPips');
-  if (!stage || !pipsEl) return;
-
-  var HOLD = 10000;
-  var W_IN  = 220;
-  var W_OUT = 110;
-
-  for (var i = 0; i < sentences.length; i++) {
-    var p = document.createElement('div');
-    p.className = 'wbw-pip' + (i === 0 ? ' on' : '');
-    p.id = 'wbwPip' + i;
-    pipsEl.appendChild(p);
-  }
-
-  function setPip(idx) {
-    for (var i = 0; i < sentences.length; i++) {
-      var p = document.getElementById('wbwPip' + i);
-      if (p) p.className = 'wbw-pip' + (i === idx ? ' on' : '');
-    }
-  }
-
-  function buildWords(idx) {
-    stage.innerHTML = '';
-    sentences[idx].forEach(function(w) {
-      var el = document.createElement('span');
-      if (w.yt) {
-        el.className = 'wbw-word yt-pill';
-        el.innerHTML = YT_SVG + ' YouTube';
-        el.style.cursor = 'pointer';
-        el.onclick = function(){ window.open('https://www.youtube.com/@RODesignLibrary','_blank'); };
-      } else {
-        el.className = 'wbw-word' + (w.em ? ' em' : '');
-        el.textContent = w.t;
-      }
+  var stage=document.getElementById('wbwStage'),pipsEl=document.getElementById('wbwPips');
+  if(!stage||!pipsEl) return;
+  var HOLD=10000,W_IN=220,W_OUT=110;
+  for(var i=0;i<sentences.length;i++){var p=document.createElement('div');p.className='wbw-pip'+(i===0?' on':'');p.id='wbwPip'+i;pipsEl.appendChild(p);}
+  function setPip(idx){for(var i=0;i<sentences.length;i++){var p=document.getElementById('wbwPip'+i);if(p)p.className='wbw-pip'+(i===idx?' on':'');}}
+  function buildWords(idx){
+    stage.innerHTML='';
+    sentences[idx].forEach(function(w){
+      var el=document.createElement('span');
+      if(w.yt){el.className='wbw-word yt-pill';el.innerHTML=YT_SVG+' YouTube';el.style.cursor='pointer';el.onclick=function(){window.open('https://www.youtube.com/@RODesignLibrary','_blank');};}
+      else{el.className='wbw-word'+(w.em?' em':'');el.textContent=w.t;}
       stage.appendChild(el);
     });
     return stage.querySelectorAll('.wbw-word');
   }
-
-  function showWords(els, cb) {
-    // create blinking cursor
-    var cursor = document.createElement('span');
-    cursor.className = 'wbw-cursor';
-    stage.appendChild(cursor);
-    var i = 0;
-    function next() {
-      if (i >= els.length) {
-        // remove cursor when done
-        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
-        cb(); return;
-      }
-      els[i].classList.add('visible');
-      // move cursor after current word
-      if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
-      if (els[i].parentNode) els[i].parentNode.insertBefore(cursor, els[i].nextSibling);
-      i++;
-      setTimeout(next, W_IN);
-    }
+  function showWords(els,cb){
+    var cursor=document.createElement('span');cursor.className='wbw-cursor';stage.appendChild(cursor);var i=0;
+    function next(){if(i>=els.length){if(cursor.parentNode)cursor.parentNode.removeChild(cursor);cb();return;}els[i].classList.add('visible');if(cursor.parentNode)cursor.parentNode.removeChild(cursor);if(els[i].parentNode)els[i].parentNode.insertBefore(cursor,els[i].nextSibling);i++;setTimeout(next,W_IN);}
     next();
   }
-
-  function hideWords(els, cb) {
-    var i = els.length - 1;
-    function next() {
-      if (i < 0) { cb(); return; }
-      els[i].classList.remove('visible');
-      i--;
-      setTimeout(next, W_OUT);
-    }
-    next();
-  }
-
-  function runSentence(idx) {
-    setPip(idx);
-    var els = buildWords(idx);
-    showWords(els, function() {
-      setTimeout(function() {
-        hideWords(els, function() {
-          setTimeout(function() {
-            runSentence((idx + 1) % sentences.length);
-          }, 500);
-        });
-      }, HOLD);
-    });
-  }
-
-  setTimeout(function() { runSentence(0); }, 400);
+  function hideWords(els,cb){var i=els.length-1;function next(){if(i<0){cb();return;}els[i].classList.remove('visible');i--;setTimeout(next,W_OUT);}next();}
+  function runSentence(idx){setPip(idx);var els=buildWords(idx);showWords(els,function(){setTimeout(function(){hideWords(els,function(){setTimeout(function(){runSentence((idx+1)%sentences.length);},500);});},HOLD);});}
+  setTimeout(function(){runSentence(0);},400);
 })();
+
+// ─── START ────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  const zone=document.getElementById('galleryUploadZone');
+  if(zone){
+    zone.addEventListener('dragover',e=>{e.preventDefault();zone.classList.add('drag-over');});
+    zone.addEventListener('dragleave',()=>zone.classList.remove('drag-over'));
+    zone.addEventListener('drop',e=>{e.preventDefault();zone.classList.remove('drag-over');if(e.dataTransfer.files.length)handleGalleryUpload({files:e.dataTransfer.files,value:''});});
+  }
+  buildGallery(); renderAdminGalleryGrid();
+});
+
+init();
 </script>
 
 <!-- YOUTUBE SCROLL BAR -->
@@ -2175,8 +2032,8 @@ function processCheckout() {
   <div class="yt-scroll-fade-l"></div>
   <div class="yt-scroll-fade-r"></div>
   <div class="yt-scroll-track">
-    <div class="yt-scroll-item"><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Visit our YouTube channel&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;for free engineering tutorials &amp; guides.</span><span class="yt-sep">&bull;</span><span><span class="yt-highlight">Subscribe Now</span>&nbsp;&mdash; Get&nbsp;<span class="yt-highlight">1 Month FREE</span>&nbsp;subscription &mdash; absolutely free, no credit card needed. First 100 subscribers only!</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Don&rsquo;t miss out &mdash; Subscribe to&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;and unlock&nbsp;<span class="yt-highlight">1 Full Month FREE</span>&nbsp;— absolutely free, cancel anytime.</span><span class="yt-sep">&bull;</span><span>Practical RO Engineering, Desalination Guides &amp; Design Tools &mdash; all on <span class="yt-channel">@RODesignLibrary</span>. Subscribe &amp; secure your spot!</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span></div>
-    <div class="yt-scroll-item"><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Visit our YouTube channel&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;for free engineering tutorials &amp; guides.</span><span class="yt-sep">&bull;</span><span><span class="yt-highlight">Subscribe Now</span>&nbsp;&mdash; Get&nbsp;<span class="yt-highlight">1 Month FREE</span>&nbsp;subscription &mdash; absolutely free, no credit card needed. First 100 subscribers only!</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Don&rsquo;t miss out &mdash; Subscribe to&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;and unlock&nbsp;<span class="yt-highlight">1 Full Month FREE</span>&nbsp;— absolutely free, cancel anytime.</span><span class="yt-sep">&bull;</span><span>Practical RO Engineering, Desalination Guides &amp; Design Tools &mdash; all on <span class="yt-channel">@RODesignLibrary</span>. Subscribe &amp; secure your spot!</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span></div>
+    <div class="yt-scroll-item"><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Visit our YouTube channel&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;for free engineering tutorials &amp; guides.</span><span class="yt-sep">&bull;</span><span><span class="yt-highlight">Subscribe Now</span>&nbsp;&mdash; Get&nbsp;<span class="yt-highlight">1 Month FREE</span>&nbsp;subscription &mdash; no credit card needed. First 100 subscribers only!</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Don&rsquo;t miss out &mdash; Subscribe to&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;and unlock&nbsp;<span class="yt-highlight">1 Full Month FREE</span>&nbsp;&mdash; cancel anytime.</span><span class="yt-sep">&bull;</span><span>Practical RO Engineering, Desalination Guides &amp; Design Tools &mdash; all on <span class="yt-channel">@RODesignLibrary</span>.</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span></div>
+    <div class="yt-scroll-item"><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Visit our YouTube channel&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;for free engineering tutorials &amp; guides.</span><span class="yt-sep">&bull;</span><span><span class="yt-highlight">Subscribe Now</span>&nbsp;&mdash; Get&nbsp;<span class="yt-highlight">1 Month FREE</span>&nbsp;subscription &mdash; no credit card needed. First 100 subscribers only!</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span><span class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.6 12 21.6 12 21.6s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></span><span>Don&rsquo;t miss out &mdash; Subscribe to&nbsp;<span class="yt-channel">@RODesignLibrary</span>&nbsp;and unlock&nbsp;<span class="yt-highlight">1 Full Month FREE</span>&nbsp;&mdash; cancel anytime.</span><span class="yt-sep">&bull;</span><span>Practical RO Engineering, Desalination Guides &amp; Design Tools &mdash; all on <span class="yt-channel">@RODesignLibrary</span>.</span><span class="yt-sep">&bull;</span><a class="yt-sub-btn" href="https://www.youtube.com/@RODesignLibrary" target="_blank">Subscribe Free</a><span class="yt-sep">&bull;</span></div>
   </div>
 </div>
 
